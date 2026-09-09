@@ -1,0 +1,20 @@
+# macOS
+.DS_Store
+._*
+
+# Xcode: configuración personal de mi xcode
+xcuserdata/
+*.xcuserstate
+
+# Archivos que se generan automaticamente al compilar con Xcode
+DerivedData/
+build/
+.build/
+
+# Variables y secretos
+.env
+.env.*
+!.env.example
+
+# Pruebas personales
+/test_jules/
