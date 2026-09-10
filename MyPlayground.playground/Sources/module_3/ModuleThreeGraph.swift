@@ -69,7 +69,7 @@ struct ModuleThreeGraph: View {
         .padding(8)
         .background(Color.black.opacity(0.14))
         .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-        .accessibilityLabel("Gráfica cartesiana interactiva con punto objetivo, valor límite y valor de la función")
+        .accessibilityLabel("Interactive Cartesian graph with a target point, limit value, and function value")
     }
 
     @ViewBuilder

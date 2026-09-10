@@ -29,13 +29,13 @@ struct ModuleFourIntroductionView: View {
 
     private var explanationPanel: some View {
         VStack(alignment: .leading, spacing: 15) {
-            LessonEyebrow(text: "Pantalla 1 · Comprender")
+            LessonEyebrow(text: "Screen 1 · Understand")
 
-            Text("Un punto, dos direcciones")
+            Text("One Point, Two Directions")
                 .font(.system(size: 31, weight: .heavy, design: .rounded))
                 .foregroundStyle(AppTheme.warmWhite)
 
-            Text("Un límite lateral estudia qué ocurre desde un solo lado del punto objetivo. El signo pequeño indica la dirección de aproximación.")
+            Text("A one-sided limit examines what happens from only one side of the target point. The small sign indicates the direction of approach.")
                 .font(.system(size: 13.5, design: .rounded))
                 .foregroundStyle(AppTheme.mutedText)
                 .lineSpacing(4)
@@ -44,13 +44,13 @@ struct ModuleFourIntroductionView: View {
             LateralDefinitionCard(
                 side: .left,
                 expression: "limₓ→ₐ⁻ f(x)",
-                description: "Usa valores menores que a y avanza hacia la derecha."
+                description: "Use values less than a and move toward the right."
             )
 
             LateralDefinitionCard(
                 side: .right,
                 expression: "limₓ→ₐ⁺ f(x)",
-                description: "Usa valores mayores que a y avanza hacia la izquierda."
+                description: "Use values greater than a and move toward the left."
             )
         }
     }
@@ -59,8 +59,8 @@ struct ModuleFourIntroductionView: View {
         VStack(alignment: .leading, spacing: 13) {
             HStack(alignment: .bottom) {
                 VStack(alignment: .leading, spacing: 4) {
-                    LessonEyebrow(text: "Ejemplo con salto")
-                    Text("Cada lado cuenta su propia historia")
+                    LessonEyebrow(text: "Jump Example")
+                    Text("Each Side Tells Its Own Story")
                         .font(.system(size: 22, weight: .bold, design: .rounded))
                         .foregroundStyle(AppTheme.warmWhite)
                 }
@@ -68,8 +68,8 @@ struct ModuleFourIntroductionView: View {
                 Spacer()
 
                 HStack(spacing: 12) {
-                    DirectionLegend(color: AppTheme.lightBlue, text: "izquierda")
-                    DirectionLegend(color: AppTheme.softGold, text: "derecha")
+                    DirectionLegend(color: AppTheme.lightBlue, text: "left")
+                    DirectionLegend(color: AppTheme.softGold, text: "right")
                 }
             }
 
@@ -78,7 +78,7 @@ struct ModuleFourIntroductionView: View {
 
             ModuleCard {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("Función del ejemplo")
+                    Text("Example Function")
                         .font(.system(size: 10, weight: .bold, design: .rounded))
                         .tracking(1.2)
                         .foregroundStyle(AppTheme.softGold)
@@ -89,9 +89,9 @@ struct ModuleFourIntroductionView: View {
                             .foregroundStyle(AppTheme.warmWhite)
 
                         VStack(alignment: .leading, spacing: 5) {
-                            Text("x + 1,   si x < 2")
+                            Text("x + 1,   if x < 2")
                                 .foregroundStyle(AppTheme.lightBlue)
-                            Text("x + 3,   si x > 2")
+                            Text("x + 3,   if x > 2")
                                 .foregroundStyle(AppTheme.softGold)
                         }
                         .font(.system(size: 14, weight: .bold, design: .monospaced))
@@ -99,7 +99,7 @@ struct ModuleFourIntroductionView: View {
                         Spacer()
                     }
 
-                    Text("Primero analizaremos cada dirección por separado; después decidiremos si existe el límite bilateral.")
+                    Text("First, we will analyze each direction separately; then we will decide whether the two-sided limit exists.")
                         .font(.system(size: 11.5, weight: .medium, design: .rounded))
                         .foregroundStyle(AppTheme.mutedText)
                         .fixedSize(horizontal: false, vertical: true)

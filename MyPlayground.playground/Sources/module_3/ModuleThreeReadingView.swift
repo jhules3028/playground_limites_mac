@@ -29,13 +29,13 @@ struct ModuleThreeReadingView: View {
 
     private var explanationPanel: some View {
         VStack(alignment: .leading, spacing: 16) {
-            LessonEyebrow(text: "Pantalla 1 · Leer")
+            LessonEyebrow(text: "Screen 1 · Read")
 
-            Text("El límite visto en una gráfica")
+            Text("A Limit Seen on a Graph")
                 .font(.system(size: 31, weight: .heavy, design: .rounded))
                 .foregroundStyle(AppTheme.warmWhite)
 
-            Text("La gráfica permite observar la tendencia de f(x) cuando x se acerca al punto objetivo a.")
+            Text("A graph lets us observe the trend of f(x) as x approaches the target point a.")
                 .font(.system(size: 14, design: .rounded))
                 .foregroundStyle(AppTheme.mutedText)
                 .lineSpacing(4)
@@ -52,16 +52,16 @@ struct ModuleThreeReadingView: View {
 
             ModuleCard {
                 VStack(alignment: .leading, spacing: 11) {
-                    GraphElementRow(icon: "arrow.left.and.right", text: "Los ejes ubican los valores de x y de y.")
-                    GraphElementRow(icon: "waveform.path.ecg", text: "La curva muestra el comportamiento de la función.")
-                    GraphElementRow(icon: "scope", text: "Las guías doradas señalan a = 2 y L = 4.")
-                    GraphElementRow(icon: "circle", text: "El hueco indica que f(2) no está definida.")
+                    GraphElementRow(icon: "arrow.left.and.right", text: "The axes locate the values of x and y.")
+                    GraphElementRow(icon: "waveform.path.ecg", text: "The curve shows the behavior of the function.")
+                    GraphElementRow(icon: "scope", text: "The gold guides mark a = 2 and L = 4.")
+                    GraphElementRow(icon: "circle", text: "The hole indicates that f(2) is undefined.")
                 }
             }
 
             HStack(spacing: 10) {
-                ExpressionBadge(expression: ModuleThreeExample.limitNotation, caption: "comportamiento cercano")
-                ExpressionBadge(expression: "f(2)", caption: "valor exacto")
+                ExpressionBadge(expression: ModuleThreeExample.limitNotation, caption: "nearby behavior")
+                ExpressionBadge(expression: "f(2)", caption: "exact value")
             }
         }
     }
@@ -70,8 +70,8 @@ struct ModuleThreeReadingView: View {
         VStack(alignment: .leading, spacing: 13) {
             HStack(alignment: .bottom) {
                 VStack(alignment: .leading, spacing: 4) {
-                    LessonEyebrow(text: "Ejemplo visual")
-                    Text("Acercarse no significa llegar")
+                    LessonEyebrow(text: "Visual example")
+                    Text("Approaching Does Not Mean Reaching")
                         .font(.system(size: 23, weight: .bold, design: .rounded))
                         .foregroundStyle(AppTheme.warmWhite)
                 }
@@ -93,11 +93,11 @@ struct ModuleThreeReadingView: View {
                     .foregroundStyle(AppTheme.softGold)
 
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("Mira alrededor del hueco")
+                    Text("Look Around the Hole")
                         .font(.system(size: 13, weight: .bold, design: .rounded))
                         .foregroundStyle(AppTheme.softGold)
 
-                    Text("Aunque no hay un valor colocado en x = 2, la curva se acerca a y = 4 desde ambos lados. Por eso el límite sí puede existir.")
+                    Text("Although no value is assigned at x = 2, the curve approaches y = 4 from both sides. Therefore, the limit can still exist.")
                         .font(.system(size: 12.5, weight: .medium, design: .rounded))
                         .foregroundStyle(AppTheme.warmWhite)
                         .lineSpacing(3)

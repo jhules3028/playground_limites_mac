@@ -71,7 +71,7 @@ struct EvaluationView: View {
     private var navigation: some View {
         HStack {
             Button(action: showPreviousQuestion) {
-                Label(currentIndex == 0 ? "Módulo 6" : "Anterior", systemImage: "arrow.left")
+                Label(currentIndex == 0 ? "Module 6" : "Previous", systemImage: "arrow.left")
                     .font(.system(size: 13.5, weight: .semibold, design: .rounded))
                     .foregroundStyle(AppTheme.warmWhite)
                     .padding(.horizontal, 18)
@@ -84,10 +84,10 @@ struct EvaluationView: View {
             Spacer()
 
             VStack(spacing: 3) {
-                Text(answers[questions[currentIndex].id] == nil ? "Aún sin respuesta" : "Respuesta guardada")
+                Text(answers[questions[currentIndex].id] == nil ? "Not answered yet" : "Answer saved")
                     .font(.system(size: 10.5, weight: .bold, design: .rounded))
                     .foregroundStyle(answers[questions[currentIndex].id] == nil ? AppTheme.mutedText : AppTheme.lightBlue)
-                Text("Puedes cambiarla antes de entregar")
+                Text("You can change it before submitting")
                     .font(.system(size: 9.5, weight: .medium, design: .rounded))
                     .foregroundStyle(AppTheme.mutedText.opacity(0.8))
             }
@@ -96,7 +96,7 @@ struct EvaluationView: View {
 
             if currentIndex < questions.count - 1 {
                 Button(action: showNextQuestion) {
-                    Label("Siguiente", systemImage: "arrow.right")
+                    Label("Next", systemImage: "arrow.right")
                         .labelStyle(EvaluationTrailingIconLabelStyle())
                         .font(.system(size: 13.5, weight: .bold, design: .rounded))
                         .foregroundStyle(AppTheme.deepNavy)
@@ -109,7 +109,7 @@ struct EvaluationView: View {
             } else {
                 Button(action: submit) {
                     HStack(spacing: 9) {
-                        Text(isComplete ? "Entregar evaluación" : "Faltan \(questions.count - answers.count)")
+                        Text(isComplete ? "Submit Assessment" : "\(questions.count - answers.count) Remaining")
                         Image(systemName: isComplete ? "paperplane.fill" : "lock.fill")
                     }
                     .font(.system(size: 13.5, weight: .bold, design: .rounded))
@@ -206,4 +206,3 @@ private struct EvaluationTrailingIconLabelStyle: LabelStyle {
         }
     }
 }
-

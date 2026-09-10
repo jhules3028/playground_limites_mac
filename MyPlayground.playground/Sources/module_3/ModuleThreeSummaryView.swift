@@ -31,19 +31,19 @@ struct ModuleThreeSummaryView: View {
 
     private var comparisonPanel: some View {
         VStack(alignment: .leading, spacing: 15) {
-            LessonEyebrow(text: "Pantalla 3 · Diferenciar")
+            LessonEyebrow(text: "Screen 3 · Distinguish")
 
-            Text("Límite y valor de la función")
+            Text("Limit and Function Value")
                 .font(.system(size: 29, weight: .heavy, design: .rounded))
                 .foregroundStyle(AppTheme.warmWhite)
 
             HStack(spacing: 12) {
-                Text("FUNCIÓN DEL CASO")
+                Text("FUNCTION DEFINITION")
                     .font(.system(size: 9, weight: .bold, design: .rounded))
                     .tracking(1.2)
                     .foregroundStyle(AppTheme.lightBlue)
 
-                Text("f(x) =  x + 2, si x ≠ 2;   6, si x = 2")
+                Text("f(x) =  x + 2, if x ≠ 2;   6, if x = 2")
                     .font(.system(size: 15, weight: .semibold, design: .serif))
                     .foregroundStyle(AppTheme.warmWhite)
                     .minimumScaleFactor(0.72)
@@ -61,15 +61,15 @@ struct ModuleThreeSummaryView: View {
             HStack(spacing: 11) {
                 MeaningCard(
                     expression: "limₓ→₂ f(x) = 4",
-                    label: "LÍMITE",
-                    explanation: "Describe la tendencia alrededor de x = 2.",
+                    label: "LIMIT",
+                    explanation: "Describes the trend around x = 2.",
                     color: AppTheme.softGold
                 )
 
                 MeaningCard(
                     expression: "f(2) = 6",
-                    label: "VALOR EXACTO",
-                    explanation: "Describe solamente el punto ubicado en x = 2.",
+                    label: "EXACT VALUE",
+                    explanation: "Describes only the point located at x = 2.",
                     color: AppTheme.error
                 )
             }
@@ -80,7 +80,7 @@ struct ModuleThreeSummaryView: View {
             HStack(alignment: .top, spacing: 10) {
                 Image(systemName: "lightbulb.fill")
                     .foregroundStyle(AppTheme.softGold)
-                Text("Mover o cambiar un solo punto puede modificar f(2), pero no altera la tendencia de toda la curva cercana.")
+                Text("Moving or changing one point can modify f(2), but it does not alter the trend of the entire nearby curve.")
                     .font(.system(size: 11.5, weight: .semibold, design: .rounded))
                     .foregroundStyle(AppTheme.warmWhite)
                     .fixedSize(horizontal: false, vertical: true)
@@ -90,24 +90,24 @@ struct ModuleThreeSummaryView: View {
 
     private var checkpointPanel: some View {
         VStack(alignment: .leading, spacing: 15) {
-            LessonEyebrow(text: "Comprobación rápida")
+            LessonEyebrow(text: "Quick check")
 
             ModuleCard {
                 VStack(alignment: .leading, spacing: 12) {
-                    Text("La gráfica tiene un hueco en (2, 4) y un punto lleno en (2, 6). ¿Qué afirmación es correcta?")
+                    Text("The graph has a hole at (2, 4) and a filled point at (2, 6). Which statement is correct?")
                         .font(.system(size: 16, weight: .bold, design: .rounded))
                         .foregroundStyle(AppTheme.warmWhite)
                         .fixedSize(horizontal: false, vertical: true)
 
-                    GraphAnswerOption(label: "A", text: "El límite es 4 y f(2) = 6.", isSelected: selectedAnswer == 0) {
+                    GraphAnswerOption(label: "A", text: "The limit is 4 and f(2) = 6.", isSelected: selectedAnswer == 0) {
                         selectedAnswer = 0
                     }
 
-                    GraphAnswerOption(label: "B", text: "El límite y f(2) valen 6.", isSelected: selectedAnswer == 1) {
+                    GraphAnswerOption(label: "B", text: "The limit and f(2) both equal 6.", isSelected: selectedAnswer == 1) {
                         selectedAnswer = 1
                     }
 
-                    GraphAnswerOption(label: "C", text: "El límite no existe por el hueco.", isSelected: selectedAnswer == 2) {
+                    GraphAnswerOption(label: "C", text: "The limit does not exist because of the hole.", isSelected: selectedAnswer == 2) {
                         selectedAnswer = 2
                     }
 
@@ -119,11 +119,11 @@ struct ModuleThreeSummaryView: View {
 
             ModuleCard {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("Idea clave del módulo")
+                    Text("Key Idea from This Module")
                         .font(.system(size: 12, weight: .bold, design: .rounded))
                         .foregroundStyle(AppTheme.softGold)
 
-                    Text("limₓ→ₐ f(x) estudia valores cercanos a a; f(a) pregunta qué ocurre exactamente en a. No son la misma pregunta.")
+                    Text("limₓ→ₐ f(x) examines values near a; f(a) asks what happens exactly at a. They are not the same question.")
                         .font(.system(size: 13.5, weight: .semibold, design: .rounded))
                         .foregroundStyle(AppTheme.warmWhite)
                         .lineSpacing(3)
@@ -213,8 +213,8 @@ private struct GraphFeedback: View {
 
             Text(
                 isCorrect
-                    ? "Correcto. La curva se aproxima a 4, mientras el punto lleno indica que f(2) = 6."
-                    : "Observa cada marca por separado: el hueco en y = 4 representa el límite y el punto lleno en y = 6 representa f(2)."
+                    ? "Correct. The curve approaches 4, while the filled point indicates that f(2) = 6."
+                    : "Read each mark separately: the hole at y = 4 represents the limit, and the filled point at y = 6 represents f(2)."
             )
             .font(.system(size: 11, weight: .medium, design: .rounded))
             .foregroundStyle(AppTheme.warmWhite)

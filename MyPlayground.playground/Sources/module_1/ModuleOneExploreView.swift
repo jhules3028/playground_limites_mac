@@ -44,30 +44,30 @@ struct ModuleOneExploreView: View {
 
     private var explanationPanel: some View {
         VStack(alignment: .leading, spacing: 18) {
-            LessonEyebrow(text: "Pantalla 2 · Experimentar")
+            LessonEyebrow(text: "Screen 2 · Explore")
 
-            Text("Acerca x al objetivo")
+            Text("Move x Toward the Target")
                 .font(.system(size: 31, weight: .heavy, design: .rounded))
                 .foregroundStyle(AppTheme.warmWhite)
 
-            Text("En este ejemplo, la gráfica sigue la regla f(x) = x + 2, pero dejamos un hueco cuando x = 2.")
+            Text("In this example, the graph follows f(x) = x + 2, but we leave a hole at x = 2.")
                 .font(.system(size: 14, design: .rounded))
                 .foregroundStyle(AppTheme.mutedText)
                 .lineSpacing(4)
                 .fixedSize(horizontal: false, vertical: true)
 
             HStack(spacing: 10) {
-                TargetBadge(symbol: "a", value: "2", caption: "objetivo")
-                TargetBadge(symbol: "L", value: "4", caption: "límite")
+                TargetBadge(symbol: "a", value: "2", caption: "target")
+                TargetBadge(symbol: "L", value: "4", caption: "limit")
             }
 
             ModuleCard {
                 VStack(alignment: .leading, spacing: 9) {
-                    Label("Tu misión", systemImage: "scope")
+                    Label("Your task", systemImage: "scope")
                         .font(.system(size: 13, weight: .bold, design: .rounded))
                         .foregroundStyle(AppTheme.softGold)
 
-                    Text("Mueve el deslizador y observa qué sucede con f(x) cuando x se acerca cada vez más a 2.")
+                    Text("Move the slider and observe what happens to f(x) as x gets closer and closer to 2.")
                         .font(.system(size: 13, weight: .medium, design: .rounded))
                         .foregroundStyle(AppTheme.warmWhite)
                         .fixedSize(horizontal: false, vertical: true)
@@ -75,9 +75,9 @@ struct ModuleOneExploreView: View {
             }
 
             HStack(spacing: 8) {
-                PresetButton(title: "Lejos", value: 0.50, selection: $xValue)
-                PresetButton(title: "Cerca", value: 1.80, selection: $xValue)
-                PresetButton(title: "Muy cerca", value: 1.99, selection: $xValue)
+                PresetButton(title: "Far", value: 0.50, selection: $xValue)
+                PresetButton(title: "Close", value: 1.80, selection: $xValue)
+                PresetButton(title: "Very close", value: 1.99, selection: $xValue)
             }
         }
     }
@@ -111,7 +111,7 @@ struct ModuleOneExploreView: View {
                 HStack(spacing: 10) {
                     ExperimentValueCard(label: "x", value: ModuleOneExample.formatted(xValue), color: accentColor)
                     ExperimentValueCard(label: "f(x)", value: functionValueText, color: accentColor)
-                    ExperimentValueCard(label: "distancia a", value: ModuleOneExample.formatted(distanceToTarget), color: AppTheme.warmWhite)
+                    ExperimentValueCard(label: "distance to a", value: ModuleOneExample.formatted(distanceToTarget), color: AppTheme.warmWhite)
                 }
 
                 HStack(alignment: .top, spacing: 11) {
@@ -133,7 +133,7 @@ struct ModuleOneExploreView: View {
 
     private var functionValueText: String {
         guard let functionValue else {
-            return "no definida"
+            return "undefined"
         }
 
         return ModuleOneExample.formatted(functionValue)
@@ -141,18 +141,18 @@ struct ModuleOneExploreView: View {
 
     private var feedbackMessage: String {
         if functionValue == nil {
-            return "En x = 2 hay un hueco: f(2) no está definida. Aun así, los valores cercanos muestran que el límite es 4."
+            return "There is a hole at x = 2: f(2) is undefined. Even so, nearby values show that the limit is 4."
         }
 
         if distanceToTarget < 0.03 {
-            return "¡Muy cerca! x se aproxima a 2 y, al mismo tiempo, f(x) se aproxima a 4."
+            return "Very close! x approaches 2 while f(x) approaches 4."
         }
 
         if distanceToTarget < 0.30 {
-            return "Vas acercándote: al disminuir la distancia entre x y 2, también disminuye la distancia entre f(x) y 4."
+            return "You are getting closer: as the distance between x and 2 decreases, the distance between f(x) and 4 also decreases."
         }
 
-        return "Todavía estás lejos del objetivo. Arrastra x hacia 2 y observa cómo responde la función."
+        return "You are still far from the target. Drag x toward 2 and observe how the function responds."
     }
 
     private var messageIcon: String {
@@ -292,7 +292,7 @@ private struct LimitExperimentGraph: View {
         .padding(8)
         .background(Color.black.opacity(0.13))
         .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
-        .accessibilityLabel("Gráfica interactiva de f de x igual a x más dos con un hueco en x igual a dos")
+        .accessibilityLabel("Interactive graph of f of x equals x plus two with a hole at x equals two")
     }
 
     private var accentColor: Color {

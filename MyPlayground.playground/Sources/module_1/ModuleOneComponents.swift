@@ -17,15 +17,15 @@ struct ModuleOneHeader: View {
                     .overlay(Circle().stroke(Color.white.opacity(0.12), lineWidth: 1))
             }
             .buttonStyle(.plain)
-            .help("Volver a la portada")
+            .help("Back to cover")
 
             VStack(alignment: .leading, spacing: 3) {
-                Text("MÓDULO 1")
+                Text("MODULE 1")
                     .font(.system(size: 10, weight: .bold, design: .rounded))
                     .tracking(2)
                     .foregroundStyle(AppTheme.softGold)
 
-                Text("Idea intuitiva del límite")
+                Text("Intuitive idea of a limit")
                     .font(.system(size: 18, weight: .bold, design: .rounded))
                     .foregroundStyle(AppTheme.warmWhite)
             }
@@ -61,7 +61,7 @@ struct ModuleOneNavigation: View {
     var body: some View {
         HStack {
             Button(action: onPrevious) {
-                Label("Anterior", systemImage: "arrow.left")
+                Label("Previous", systemImage: "arrow.left")
                     .font(.system(size: 14, weight: .semibold, design: .rounded))
                     .foregroundStyle(currentPage == 0 ? Color.white.opacity(0.25) : AppTheme.warmWhite)
                     .padding(.horizontal, 18)
@@ -76,7 +76,7 @@ struct ModuleOneNavigation: View {
 
             Button(action: onNext) {
                 HStack(spacing: 12) {
-                    Text(currentPage == pageCount - 1 ? "Terminar módulo" : "Siguiente")
+                    Text(currentPage == pageCount - 1 ? "Finish Module" : "Next")
                     Image(systemName: currentPage == pageCount - 1 ? "checkmark" : "arrow.right")
                 }
                 .font(.system(size: 14, weight: .bold, design: .rounded))
@@ -164,7 +164,7 @@ struct ApproachAnalogyView: View {
                     Image(systemName: "door.left.hand.closed")
                         .font(.system(size: 30, weight: .medium))
                         .foregroundStyle(AppTheme.softGold)
-                    Text("meta")
+                    Text("goal")
                         .font(.system(size: 10, weight: .bold, design: .rounded))
                         .foregroundStyle(AppTheme.softGold)
                 }

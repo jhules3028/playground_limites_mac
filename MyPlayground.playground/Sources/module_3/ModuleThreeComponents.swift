@@ -17,15 +17,15 @@ struct ModuleThreeHeader: View {
                     .overlay(Circle().stroke(Color.white.opacity(0.12), lineWidth: 1))
             }
             .buttonStyle(.plain)
-            .help("Volver a la portada")
+            .help("Back to cover")
 
             VStack(alignment: .leading, spacing: 3) {
-                Text("MÓDULO 3")
+                Text("MODULE 3")
                     .font(.system(size: 10, weight: .bold, design: .rounded))
                     .tracking(2)
                     .foregroundStyle(AppTheme.softGold)
 
-                Text("Interpretación gráfica")
+                Text("Graphical Interpretation")
                     .font(.system(size: 18, weight: .bold, design: .rounded))
                     .foregroundStyle(AppTheme.warmWhite)
             }
@@ -61,7 +61,7 @@ struct ModuleThreeNavigation: View {
     var body: some View {
         HStack {
             Button(action: onPrevious) {
-                Label(currentPage == 0 ? "Módulo 2" : "Anterior", systemImage: "arrow.left")
+                Label(currentPage == 0 ? "Module 2" : "Previous", systemImage: "arrow.left")
                     .font(.system(size: 14, weight: .semibold, design: .rounded))
                     .foregroundStyle(AppTheme.warmWhite)
                     .padding(.horizontal, 18)
@@ -75,7 +75,7 @@ struct ModuleThreeNavigation: View {
 
             Button(action: onNext) {
                 HStack(spacing: 12) {
-                    Text(currentPage == pageCount - 1 ? "Terminar módulo" : "Siguiente")
+                    Text(currentPage == pageCount - 1 ? "Finish Module" : "Next")
                     Image(systemName: currentPage == pageCount - 1 ? "checkmark" : "arrow.right")
                 }
                 .font(.system(size: 14, weight: .bold, design: .rounded))
@@ -103,9 +103,9 @@ struct ModuleThreeNavigation: View {
 struct GraphLegend: View {
     var body: some View {
         HStack(spacing: 16) {
-            LegendItem(color: AppTheme.lightBlue, title: "curva")
-            LegendItem(color: AppTheme.softGold, title: "límite", isHollow: true)
-            LegendItem(color: AppTheme.success, title: "punto móvil")
+            LegendItem(color: AppTheme.lightBlue, title: "curve")
+            LegendItem(color: AppTheme.softGold, title: "limit", isHollow: true)
+            LegendItem(color: AppTheme.success, title: "moving point")
             LegendItem(color: AppTheme.error, title: "f(a)")
         }
         .font(.system(size: 10, weight: .semibold, design: .rounded))

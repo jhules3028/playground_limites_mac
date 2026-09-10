@@ -13,7 +13,7 @@ struct EvaluationQuestionView: View {
                 VStack(alignment: .leading, spacing: 18) {
                     HStack(alignment: .center) {
                         HStack(spacing: 9) {
-                            Text("MÓDULO \(question.moduleNumber)")
+                            Text("MODULE \(question.moduleNumber)")
                                 .font(.system(size: 10, weight: .bold, design: .rounded))
                                 .tracking(1.7)
                                 .foregroundStyle(AppTheme.softGold)
@@ -25,7 +25,7 @@ struct EvaluationQuestionView: View {
 
                         Spacer()
 
-                        Text("Pregunta \(questionNumber) de \(totalQuestions)")
+                        Text("Question \(questionNumber) of \(totalQuestions)")
                             .font(.system(size: 11, weight: .bold, design: .monospaced))
                             .foregroundStyle(AppTheme.lightBlue)
                     }

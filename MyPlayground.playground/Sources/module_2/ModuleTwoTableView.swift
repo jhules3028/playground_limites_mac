@@ -29,13 +29,13 @@ struct ModuleTwoTableView: View {
 
     private var introduction: some View {
         VStack(alignment: .leading, spacing: 18) {
-            LessonEyebrow(text: "Pantalla 1 · Observar")
+            LessonEyebrow(text: "Screen 1 · Observe")
 
-            Text("Leer un límite con números")
+            Text("Reading a Limit with Numbers")
                 .font(.system(size: 32, weight: .heavy, design: .rounded))
                 .foregroundStyle(AppTheme.warmWhite)
 
-            Text("Una tabla nos permite mirar qué ocurre alrededor del punto objetivo sin sustituirlo directamente.")
+            Text("A table lets us examine what happens around the target point without substituting it directly.")
                 .font(.system(size: 14, design: .rounded))
                 .foregroundStyle(AppTheme.mutedText)
                 .lineSpacing(4)
@@ -52,7 +52,7 @@ struct ModuleTwoTableView: View {
                         .fill(AppTheme.gold.opacity(0.5))
                         .frame(height: 1)
 
-                    Text("Punto objetivo: a = 2")
+                    Text("Target point: a = 2")
                         .font(.system(size: 12, weight: .bold, design: .rounded))
                         .foregroundStyle(AppTheme.softGold)
                 }
@@ -61,8 +61,8 @@ struct ModuleTwoTableView: View {
 
             ModuleCard {
                 VStack(alignment: .leading, spacing: 10) {
-                    SideLegend(color: AppTheme.lightBlue, title: "Desde la izquierda", detail: "Valores menores que 2")
-                    SideLegend(color: AppTheme.softGold, title: "Desde la derecha", detail: "Valores mayores que 2")
+                    SideLegend(color: AppTheme.lightBlue, title: "From the left", detail: "Values less than 2")
+                    SideLegend(color: AppTheme.softGold, title: "From the right", detail: "Values greater than 2")
                 }
             }
         }
@@ -72,15 +72,15 @@ struct ModuleTwoTableView: View {
         VStack(alignment: .leading, spacing: 16) {
             HStack(alignment: .bottom) {
                 VStack(alignment: .leading, spacing: 4) {
-                    LessonEyebrow(text: "Aproximación por ambos lados")
-                    Text("¿Hacia dónde van los resultados?")
+                    LessonEyebrow(text: "Approaching from both sides")
+                    Text("Where Are the Outputs Heading?")
                         .font(.system(size: 23, weight: .bold, design: .rounded))
                         .foregroundStyle(AppTheme.warmWhite)
                 }
 
                 Spacer()
 
-                Text("x nunca es exactamente 2")
+                Text("x is never exactly 2")
                     .font(.system(size: 10, weight: .semibold, design: .rounded))
                     .foregroundStyle(AppTheme.mutedText)
             }
@@ -93,11 +93,11 @@ struct ModuleTwoTableView: View {
                     .foregroundStyle(AppTheme.success)
 
                 VStack(alignment: .leading, spacing: 5) {
-                    Text("Observa el patrón")
+                    Text("Observe the Pattern")
                         .font(.system(size: 13, weight: .bold, design: .rounded))
                         .foregroundStyle(AppTheme.success)
 
-                    Text("3.9, 3.99 y 3.999 se acercan a 4 desde abajo; 4.1, 4.01 y 4.001 se acercan a 4 desde arriba.")
+                    Text("3.9, 3.99, and 3.999 approach 4 from below; 4.1, 4.01, and 4.001 approach 4 from above.")
                         .font(.system(size: 12.5, weight: .medium, design: .rounded))
                         .foregroundStyle(AppTheme.warmWhite)
                         .fixedSize(horizontal: false, vertical: true)

@@ -13,15 +13,15 @@ struct ModuleTwoPrecisionView: View {
                 VStack(alignment: .leading, spacing: 18) {
                     HStack(alignment: .bottom) {
                         VStack(alignment: .leading, spacing: 7) {
-                            LessonEyebrow(text: "Pantalla 2 · Experimentar")
-                            Text("Aumenta la precisión")
+                            LessonEyebrow(text: "Screen 2 · Explore")
+                            Text("Increase the Precision")
                                 .font(.system(size: 32, weight: .heavy, design: .rounded))
                                 .foregroundStyle(AppTheme.warmWhite)
                         }
 
                         Spacer()
 
-                        Text("Cada decimal divide por 10 la distancia a x = 2")
+                        Text("Each decimal place divides the distance to x = 2 by 10")
                             .font(.system(size: 11.5, weight: .medium, design: .rounded))
                             .foregroundStyle(AppTheme.mutedText)
                     }
@@ -54,7 +54,7 @@ struct ModuleTwoPrecisionView: View {
         VStack(alignment: .leading, spacing: 15) {
             ModuleCard {
                 VStack(alignment: .leading, spacing: 14) {
-                    Text("Elige cuántos decimales usar")
+                    Text("Choose the Number of Decimal Places")
                         .font(.system(size: 14, weight: .bold, design: .rounded))
                         .foregroundStyle(AppTheme.warmWhite)
 
@@ -64,7 +64,7 @@ struct ModuleTwoPrecisionView: View {
 
             ModuleCard {
                 VStack(spacing: 12) {
-                    Text("distancia hasta a")
+                    Text("distance to a")
                         .font(.system(size: 10, weight: .semibold, design: .rounded))
                         .foregroundStyle(AppTheme.mutedText)
 
@@ -95,7 +95,7 @@ struct ModuleTwoPrecisionView: View {
         ModuleCard {
             VStack(spacing: 15) {
                 HStack(spacing: 10) {
-                    Text("FUNCIÓN ANALIZADA")
+                    Text("FUNCTION BEING ANALYZED")
                         .font(.system(size: 9.5, weight: .bold, design: .rounded))
                         .tracking(1.3)
                         .foregroundStyle(AppTheme.softGold)
@@ -111,7 +111,7 @@ struct ModuleTwoPrecisionView: View {
 
                 HStack(spacing: 12) {
                     ApproachValueCard(
-                        direction: "IZQUIERDA",
+                        direction: "LEFT",
                         arrow: "→",
                         xValue: ModuleTwoExample.format(selectedRow.leftX, precision: precision),
                         result: ModuleTwoExample.format(selectedRow.leftResult, precision: precision),
@@ -123,7 +123,7 @@ struct ModuleTwoPrecisionView: View {
                         .foregroundStyle(AppTheme.softGold)
 
                     ApproachValueCard(
-                        direction: "DERECHA",
+                        direction: "RIGHT",
                         arrow: "←",
                         xValue: ModuleTwoExample.format(selectedRow.rightX, precision: precision),
                         result: ModuleTwoExample.format(selectedRow.rightResult, precision: precision),
@@ -138,7 +138,7 @@ struct ModuleTwoPrecisionView: View {
                         .font(.system(size: 18, weight: .bold))
                         .foregroundStyle(AppTheme.success)
 
-                    Text("Por ambos lados, f(x) se aproxima a 4.")
+                    Text("From both sides, f(x) approaches 4.")
                         .font(.system(size: 13, weight: .bold, design: .rounded))
                         .foregroundStyle(AppTheme.warmWhite)
 
@@ -158,11 +158,11 @@ struct ModuleTwoPrecisionView: View {
     private var precisionMessage: String {
         switch precision {
         case 1:
-            return "Estamos a una décima de 2."
+            return "We are one tenth away from 2."
         case 2:
-            return "Ahora estamos diez veces más cerca."
+            return "Now we are ten times closer."
         default:
-            return "Estamos cien veces más cerca que al inicio."
+            return "We are one hundred times closer than at the start."
         }
     }
 }

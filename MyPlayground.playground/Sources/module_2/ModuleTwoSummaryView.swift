@@ -31,9 +31,9 @@ struct ModuleTwoSummaryView: View {
 
     private var conclusionPanel: some View {
         VStack(alignment: .leading, spacing: 18) {
-            LessonEyebrow(text: "Pantalla 3 · Interpretar")
+            LessonEyebrow(text: "Screen 3 · Interpret")
 
-            Text("De los datos a la conclusión")
+            Text("From Data to a Conclusion")
                 .font(.system(size: 32, weight: .heavy, design: .rounded))
                 .foregroundStyle(AppTheme.warmWhite)
 
@@ -65,7 +65,7 @@ struct ModuleTwoSummaryView: View {
 
             ModuleCard {
                 VStack(spacing: 9) {
-                    Text("Por la izquierda y por la derecha")
+                    Text("From the Left and from the Right")
                         .font(.system(size: 12, weight: .bold, design: .rounded))
                         .foregroundStyle(AppTheme.mutedText)
 
@@ -74,7 +74,7 @@ struct ModuleTwoSummaryView: View {
                         .foregroundStyle(AppTheme.warmWhite)
                         .minimumScaleFactor(0.72)
 
-                    Text("Los dos grupos de resultados apuntan al mismo número.")
+                    Text("Both groups of outputs point to the same number.")
                         .font(.system(size: 12, weight: .bold, design: .rounded))
                         .foregroundStyle(AppTheme.success)
                 }
@@ -85,18 +85,18 @@ struct ModuleTwoSummaryView: View {
 
     private var checkpointPanel: some View {
         VStack(alignment: .leading, spacing: 18) {
-            LessonEyebrow(text: "Comprobación rápida")
+            LessonEyebrow(text: "Quick check")
 
             ModuleCard {
                 VStack(alignment: .leading, spacing: 14) {
-                    Text("Según la tabla, ¿cuál es la conclusión correcta?")
+                    Text("According to the table, which conclusion is correct?")
                         .font(.system(size: 17, weight: .bold, design: .rounded))
                         .foregroundStyle(AppTheme.warmWhite)
                         .fixedSize(horizontal: false, vertical: true)
 
                     ConclusionOption(
                         label: "A",
-                        text: "El límite es 4.",
+                        text: "The limit is 4.",
                         isSelected: selectedAnswer == 0
                     ) {
                         selectedAnswer = 0
@@ -104,7 +104,7 @@ struct ModuleTwoSummaryView: View {
 
                     ConclusionOption(
                         label: "B",
-                        text: "f(2) = 4 porque la tabla lo demuestra.",
+                        text: "f(2) = 4 because the table proves it.",
                         isSelected: selectedAnswer == 1
                     ) {
                         selectedAnswer = 1
@@ -112,7 +112,7 @@ struct ModuleTwoSummaryView: View {
 
                     ConclusionOption(
                         label: "C",
-                        text: "El límite no existe porque no usamos x = 2.",
+                        text: "The limit does not exist because we did not use x = 2.",
                         isSelected: selectedAnswer == 2
                     ) {
                         selectedAnswer = 2
@@ -131,11 +131,11 @@ struct ModuleTwoSummaryView: View {
                         .foregroundStyle(AppTheme.softGold)
 
                     VStack(alignment: .leading, spacing: 6) {
-                        Text("Idea clave")
+                        Text("Key Idea")
                             .font(.system(size: 12, weight: .bold, design: .rounded))
                             .foregroundStyle(AppTheme.softGold)
 
-                        Text("La tabla aporta evidencia de aproximación. No asegura que la función esté definida exactamente en el punto objetivo.")
+                        Text("The table provides evidence of an approaching value. It does not guarantee that the function is defined exactly at the target point.")
                             .font(.system(size: 13.5, weight: .semibold, design: .rounded))
                             .foregroundStyle(AppTheme.warmWhite)
                             .lineSpacing(3)
@@ -212,8 +212,8 @@ private struct FeedbackPanel: View {
 
             Text(
                 isCorrect
-                    ? "Correcto. Los resultados de ambos lados se acercan a 4, por eso la evidencia numérica indica que el límite es 4."
-                    : "Revisa la diferencia entre límite y valor de la función: la expresión original produce 0/0 en x = 2, pero los valores cercanos sí se aproximan a 4."
+                    ? "Correct. The outputs from both sides approach 4, so the numerical evidence indicates that the limit is 4."
+                    : "Review the difference between a limit and a function value: the original expression produces 0/0 at x = 2, but nearby values do approach 4."
             )
             .font(.system(size: 11.5, weight: .medium, design: .rounded))
             .foregroundStyle(AppTheme.warmWhite)

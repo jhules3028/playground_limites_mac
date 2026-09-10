@@ -17,15 +17,15 @@ struct ModuleTwoHeader: View {
                     .overlay(Circle().stroke(Color.white.opacity(0.12), lineWidth: 1))
             }
             .buttonStyle(.plain)
-            .help("Volver a la portada")
+            .help("Back to cover")
 
             VStack(alignment: .leading, spacing: 3) {
-                Text("MÓDULO 2")
+                Text("MODULE 2")
                     .font(.system(size: 10, weight: .bold, design: .rounded))
                     .tracking(2)
                     .foregroundStyle(AppTheme.softGold)
 
-                Text("Límites mediante tablas")
+                Text("Limits Using Tables")
                     .font(.system(size: 18, weight: .bold, design: .rounded))
                     .foregroundStyle(AppTheme.warmWhite)
             }
@@ -61,7 +61,7 @@ struct ModuleTwoNavigation: View {
     var body: some View {
         HStack {
             Button(action: onPrevious) {
-                Label(currentPage == 0 ? "Módulo 1" : "Anterior", systemImage: "arrow.left")
+                Label(currentPage == 0 ? "Module 1" : "Previous", systemImage: "arrow.left")
                     .font(.system(size: 14, weight: .semibold, design: .rounded))
                     .foregroundStyle(AppTheme.warmWhite)
                     .padding(.horizontal, 18)
@@ -75,7 +75,7 @@ struct ModuleTwoNavigation: View {
 
             Button(action: onNext) {
                 HStack(spacing: 12) {
-                    Text(currentPage == pageCount - 1 ? "Terminar módulo" : "Siguiente")
+                    Text(currentPage == pageCount - 1 ? "Finish Module" : "Next")
                     Image(systemName: currentPage == pageCount - 1 ? "checkmark" : "arrow.right")
                 }
                 .font(.system(size: 14, weight: .bold, design: .rounded))
@@ -108,7 +108,7 @@ struct NumericalLimitTable: View {
             HStack(spacing: 0) {
                 TableHeaderCell(title: "x < 2", color: AppTheme.lightBlue)
                 TableHeaderCell(title: "f(x)", color: AppTheme.lightBlue)
-                TableHeaderCell(title: "precisión", color: AppTheme.softGold)
+                TableHeaderCell(title: "precision", color: AppTheme.softGold)
                 TableHeaderCell(title: "x > 2", color: AppTheme.softGold)
                 TableHeaderCell(title: "f(x)", color: AppTheme.softGold)
             }
@@ -178,7 +178,7 @@ struct PrecisionSelector: View {
                     VStack(spacing: 3) {
                         Text("\(value)")
                             .font(.system(size: 18, weight: .bold, design: .monospaced))
-                        Text(value == 1 ? "decimal" : "decimales")
+                        Text(value == 1 ? "decimal place" : "decimal places")
                             .font(.system(size: 9, weight: .semibold, design: .rounded))
                     }
                     .foregroundStyle(precision == value ? AppTheme.deepNavy : AppTheme.warmWhite)

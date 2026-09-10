@@ -20,15 +20,15 @@ struct EvaluationHeader: View {
                     .overlay(Circle().stroke(Color.white.opacity(0.12), lineWidth: 1))
             }
             .buttonStyle(.plain)
-            .help("Volver a la portada")
+            .help("Back to cover")
 
             VStack(alignment: .leading, spacing: 3) {
-                Text("EVALUACIÓN FINAL")
+                Text("FINAL ASSESSMENT")
                     .font(.system(size: 10, weight: .bold, design: .rounded))
                     .tracking(2)
                     .foregroundStyle(AppTheme.softGold)
 
-                Text(showsResults ? "Resultados y retroalimentación" : "Comprueba lo que aprendiste")
+                Text(showsResults ? "Results and Feedback" : "Check What You Learned")
                     .font(.system(size: 18, weight: .bold, design: .rounded))
                     .foregroundStyle(AppTheme.warmWhite)
             }
@@ -53,11 +53,11 @@ struct EvaluationHeader: View {
                                 }
                         }
                         .buttonStyle(.plain)
-                        .help(answers[questions[index].id] == nil ? "Pregunta sin responder" : "Pregunta respondida")
+                        .help(answers[questions[index].id] == nil ? "Unanswered question" : "Answered question")
                     }
                 }
 
-                Text("\(answers.count) / \(questions.count) respondidas")
+                Text("\(answers.count) / \(questions.count) answered")
                     .font(.system(size: 11, weight: .semibold, design: .rounded))
                     .foregroundStyle(AppTheme.mutedText)
                     .frame(width: 112, alignment: .trailing)
@@ -134,7 +134,7 @@ struct EvaluationQuestionResource: View {
         ModuleCard {
             VStack(alignment: .leading, spacing: 11) {
                 HStack {
-                    LessonEyebrow(text: visual == .numericalTable ? "Tabla de valores" : "Recurso gráfico")
+                    LessonEyebrow(text: visual == .numericalTable ? "Table of Values" : "Graphical Resource")
                     Spacer()
                     Text(visual == .numericalTable ? "x → 2" : "f(x) = x + 2")
                         .font(.system(size: 11, weight: .bold, design: .monospaced))

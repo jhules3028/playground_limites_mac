@@ -28,7 +28,7 @@ struct ModuleSixGraph: View {
         .padding(8)
         .background(Color.black.opacity(0.14))
         .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-        .accessibilityLabel("Gráfica del caso de continuidad seleccionado alrededor de x igual a 2")
+        .accessibilityLabel("Graph of the selected continuity case around x equal to 2")
     }
 
     private func graphPoint(x: Double, y: Double, in size: CGSize) -> CGPoint {

@@ -9,9 +9,9 @@ enum LateralSide: String, CaseIterable, Identifiable {
     var name: String {
         switch self {
         case .left:
-            return "izquierda"
+            return "left"
         case .right:
-            return "derecha"
+            return "right"
         }
     }
 
@@ -34,9 +34,9 @@ enum LateralComparisonCase: String, CaseIterable, Identifiable {
     var title: String {
         switch self {
         case .matching:
-            return "Coinciden"
+            return "They Match"
         case .jump:
-            return "Son diferentes"
+            return "They Differ"
         }
     }
 }

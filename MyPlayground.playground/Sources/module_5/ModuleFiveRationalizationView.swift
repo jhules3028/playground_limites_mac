@@ -31,31 +31,31 @@ struct ModuleFiveRationalizationView: View {
 
     private var conceptPanel: some View {
         VStack(alignment: .leading, spacing: 14) {
-            LessonEyebrow(text: "Pantalla 4 · Racionalizar")
+            LessonEyebrow(text: "Screen 4 · Rationalize")
 
-            Text("Cuando el obstáculo es una raíz")
+            Text("When a Root Is the Obstacle")
                 .font(.system(size: 28, weight: .heavy, design: .rounded))
                 .foregroundStyle(AppTheme.warmWhite)
 
-            Text("Si una raíz produce 0/0, podemos multiplicar por el conjugado. Esta operación crea una diferencia de cuadrados y elimina la resta problemática del numerador.")
+            Text("If a root produces 0/0, we can multiply by the conjugate. This operation creates a difference of squares and removes the problematic subtraction from the numerator.")
                 .font(.system(size: 13, design: .rounded))
                 .foregroundStyle(AppTheme.mutedText)
                 .lineSpacing(3)
                 .fixedSize(horizontal: false, vertical: true)
 
             AlgebraFormulaCard(
-                eyebrow: "Ejemplo secundario",
+                eyebrow: "Additional Example",
                 expression: "limₓ→₄ (√x − 2) / (x − 4)",
-                explanation: "Sustituir x = 4 produce (2 − 2)/(4 − 4) = 0/0."
+                explanation: "Substituting x = 4 produces (2 − 2)/(4 − 4) = 0/0."
             )
 
             ModuleCard {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("¿Qué es el conjugado?")
+                    Text("What Is the Conjugate?")
                         .font(.system(size: 14, weight: .bold, design: .rounded))
                         .foregroundStyle(AppTheme.softGold)
 
-                    Text("Se conserva cada término y sólo cambia el signo que los separa:")
+                    Text("Keep each term and change only the sign between them:")
                         .font(.system(size: 11.5, weight: .medium, design: .rounded))
                         .foregroundStyle(AppTheme.mutedText)
                         .fixedSize(horizontal: false, vertical: true)
@@ -64,7 +64,7 @@ struct ModuleFiveRationalizationView: View {
                         .font(.system(size: 20, weight: .semibold, design: .serif))
                         .foregroundStyle(AppTheme.warmWhite)
 
-                    Text("El producto (√x − 2)(√x + 2) se convierte en x − 4.")
+                    Text("The product (√x − 2)(√x + 2) becomes x − 4.")
                         .font(.system(size: 11.5, weight: .semibold, design: .rounded))
                         .foregroundStyle(AppTheme.lightBlue)
                         .fixedSize(horizontal: false, vertical: true)
@@ -75,11 +75,11 @@ struct ModuleFiveRationalizationView: View {
 
     private var solutionPanel: some View {
         VStack(alignment: .leading, spacing: 12) {
-            LessonEyebrow(text: "Selecciona el conjugado")
+            LessonEyebrow(text: "Select the Conjugate")
 
             ModuleCard {
                 VStack(alignment: .leading, spacing: 9) {
-                    Text("¿Por cuál fracción equivalente a 1 debemos multiplicar?")
+                    Text("Which fraction equal to 1 should we multiply by?")
                         .font(.system(size: 15, weight: .bold, design: .rounded))
                         .foregroundStyle(AppTheme.warmWhite)
 
@@ -96,8 +96,8 @@ struct ModuleFiveRationalizationView: View {
                     if let selectedConjugate {
                         AlgebraFeedback(
                             isCorrect: selectedConjugate == 0,
-                            correctText: "Correcto. √x + 2 es el conjugado de √x − 2 y permite formar x − 4.",
-                            incorrectText: "Necesitamos cambiar el signo entre √x y 2. El conjugado correcto es √x + 2."
+                            correctText: "Correct. √x + 2 is the conjugate of √x − 2 and lets us form x − 4.",
+                            incorrectText: "We need to change the sign between √x and 2. The correct conjugate is √x + 2."
                         )
                     }
                 }
@@ -107,24 +107,24 @@ struct ModuleFiveRationalizationView: View {
                 VStack(alignment: .leading, spacing: 11) {
                     AlgebraStepRow(
                         number: 1,
-                        title: "Multiplica por el conjugado",
+                        title: "Multiply by the Conjugate",
                         expression: "[(√x − 2)/(x − 4)] · [(√x + 2)/(√x + 2)]",
-                        explanation: "La segunda fracción vale 1, así que no alteramos el valor de la expresión."
+                        explanation: "The second fraction equals 1, so we do not change the value of the expression."
                     )
 
                     AlgebraStepRow(
                         number: 2,
-                        title: "Usa la diferencia de cuadrados",
+                        title: "Use the Difference of Squares",
                         expression: "(x − 4) / [(x − 4)(√x + 2)]",
-                        explanation: "El producto del numerador se convierte en x − 4.",
+                        explanation: "The product in the numerator becomes x − 4.",
                         color: AppTheme.softGold
                     )
 
                     AlgebraStepRow(
                         number: 3,
-                        title: "Simplifica y sustituye",
+                        title: "Simplify and Substitute",
                         expression: "1/(√x + 2) ⟶ 1/(2 + 2) = 1/4",
-                        explanation: "Después de cancelar x − 4 para x ≠ 4, la sustitución ya es válida.",
+                        explanation: "After canceling x − 4 for x ≠ 4, substitution is now valid.",
                         color: AppTheme.success
                     )
                 }

@@ -31,27 +31,27 @@ struct ModuleFiveFactoringView: View {
 
     private var explanationPanel: some View {
         VStack(alignment: .leading, spacing: 14) {
-            LessonEyebrow(text: "Pantalla 3 · Factorizar")
+            LessonEyebrow(text: "Screen 3 · Factor")
 
-            Text("Encuentra el factor que causa el hueco")
+            Text("Find the Factor That Causes the Hole")
                 .font(.system(size: 28, weight: .heavy, design: .rounded))
                 .foregroundStyle(AppTheme.warmWhite)
 
-            Text("La diferencia de cuadrados x² − 4 contiene el mismo factor x − 2 que aparece en el denominador. Al hacerlo visible podremos simplificar la expresión para valores cercanos a 2.")
+            Text("The difference of squares x² − 4 contains the same factor x − 2 that appears in the denominator. Revealing it lets us simplify the expression for values near 2.")
                 .font(.system(size: 13, design: .rounded))
                 .foregroundStyle(AppTheme.mutedText)
                 .lineSpacing(3)
                 .fixedSize(horizontal: false, vertical: true)
 
             AlgebraFormulaCard(
-                eyebrow: "Problema",
+                eyebrow: "Problem",
                 expression: "limₓ→₂ (x² − 4) / (x − 2)",
-                explanation: "La sustitución directa produce 0/0, así que necesitamos transformar el numerador."
+                explanation: "Direct substitution produces 0/0, so we need to transform the numerator."
             )
 
             ModuleCard {
                 VStack(alignment: .leading, spacing: 8) {
-                    Label("Diferencia de cuadrados", systemImage: "square.grid.2x2.fill")
+                    Label("Difference of Squares", systemImage: "square.grid.2x2.fill")
                         .font(.system(size: 11.5, weight: .bold, design: .rounded))
                         .foregroundStyle(AppTheme.lightBlue)
 
@@ -59,7 +59,7 @@ struct ModuleFiveFactoringView: View {
                         .font(.system(size: 18, weight: .semibold, design: .serif))
                         .foregroundStyle(AppTheme.warmWhite)
 
-                    Text("Aquí A = x y B = 2. Por eso x² − 4 = (x − 2)(x + 2).")
+                    Text("Here A = x and B = 2. Therefore, x² − 4 = (x − 2)(x + 2).")
                         .font(.system(size: 11.5, weight: .medium, design: .rounded))
                         .foregroundStyle(AppTheme.mutedText)
                         .fixedSize(horizontal: false, vertical: true)
@@ -70,22 +70,22 @@ struct ModuleFiveFactoringView: View {
 
     private var procedurePanel: some View {
         VStack(alignment: .leading, spacing: 12) {
-            LessonEyebrow(text: "Elige y comprueba")
+            LessonEyebrow(text: "Choose and Check")
 
             ModuleCard {
                 VStack(alignment: .leading, spacing: 9) {
-                    Text("¿Cuál debe ser el siguiente paso después de obtener 0/0?")
+                    Text("What should the next step be after obtaining 0/0?")
                         .font(.system(size: 15, weight: .bold, design: .rounded))
                         .foregroundStyle(AppTheme.warmWhite)
 
                     HStack(spacing: 8) {
-                        CompactAlgebraChoice(text: "Factorizar x² − 4", isSelected: selectedStep == 0) {
+                        CompactAlgebraChoice(text: "Factor x² − 4", isSelected: selectedStep == 0) {
                             selectedStep = 0
                         }
-                        CompactAlgebraChoice(text: "Dividir 0 entre 0", isSelected: selectedStep == 1) {
+                        CompactAlgebraChoice(text: "Divide 0 by 0", isSelected: selectedStep == 1) {
                             selectedStep = 1
                         }
-                        CompactAlgebraChoice(text: "Promediar los términos", isSelected: selectedStep == 2) {
+                        CompactAlgebraChoice(text: "Average the terms", isSelected: selectedStep == 2) {
                             selectedStep = 2
                         }
                     }
@@ -93,8 +93,8 @@ struct ModuleFiveFactoringView: View {
                     if let selectedStep {
                         AlgebraFeedback(
                             isCorrect: selectedStep == 0,
-                            correctText: "Exacto. Factorizar revela el término x − 2 que podemos simplificar.",
-                            incorrectText: "La forma 0/0 no se opera ni se promedia. Primero debemos factorizar el numerador."
+                            correctText: "Exactly. Factoring reveals the x − 2 term that we can simplify.",
+                            incorrectText: "The form 0/0 cannot be calculated or averaged. First, we must factor the numerator."
                         )
                     }
                 }
@@ -104,24 +104,24 @@ struct ModuleFiveFactoringView: View {
                 VStack(alignment: .leading, spacing: 12) {
                     AlgebraStepRow(
                         number: 1,
-                        title: "Factoriza el numerador",
+                        title: "Factor the Numerator",
                         expression: "x² − 4 = (x − 2)(x + 2)",
-                        explanation: "Aplicamos la identidad de diferencia de cuadrados."
+                        explanation: "We apply the difference-of-squares identity."
                     )
 
                     AlgebraStepRow(
                         number: 2,
-                        title: "Reescribe y simplifica",
+                        title: "Rewrite and Simplify",
                         expression: "[(x − 2)(x + 2)] / (x − 2) = x + 2",
-                        explanation: "Cancelamos x − 2 únicamente para x ≠ 2. Eso es suficiente porque el límite estudia puntos cercanos.",
+                        explanation: "We cancel x − 2 only for x ≠ 2. That is sufficient because a limit examines nearby points.",
                         color: AppTheme.softGold
                     )
 
                     AlgebraStepRow(
                         number: 3,
-                        title: "Sustituye en la expresión simplificada",
+                        title: "Substitute into the Simplified Expression",
                         expression: "limₓ→₂ (x + 2) = 2 + 2 = 4",
-                        explanation: "Ahora la sustitución produce un número real.",
+                        explanation: "Now the substitution produces a real number.",
                         color: AppTheme.success
                     )
                 }
@@ -130,7 +130,7 @@ struct ModuleFiveFactoringView: View {
             HStack(alignment: .top, spacing: 11) {
                 Image(systemName: "info.circle.fill")
                     .foregroundStyle(AppTheme.lightBlue)
-                Text("Simplificar no rellena el hueco de la función original. Sólo crea una fórmula equivalente alrededor de x = 2, que es justamente la información que necesita el límite.")
+                Text("Simplifying does not fill the hole in the original function. It only creates an equivalent formula around x = 2, which is exactly the information the limit needs.")
                     .font(.system(size: 11.5, weight: .semibold, design: .rounded))
                     .foregroundStyle(AppTheme.warmWhite)
                     .lineSpacing(2)

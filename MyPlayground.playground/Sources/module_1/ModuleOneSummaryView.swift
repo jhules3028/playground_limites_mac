@@ -31,27 +31,27 @@ struct ModuleOneSummaryView: View {
 
     private var summaryColumn: some View {
         VStack(alignment: .leading, spacing: 18) {
-            LessonEyebrow(text: "Pantalla 3 · Concluir")
+            LessonEyebrow(text: "Screen 3 · Review")
 
-            Text("Qué debes llevarte")
+            Text("What You Should Remember")
                 .font(.system(size: 34, weight: .heavy, design: .rounded))
                 .foregroundStyle(AppTheme.warmWhite)
 
             VStack(spacing: 11) {
                 KeyIdeaRow(
                     number: "01",
-                    title: "x se aproxima a a",
-                    explanation: "Observamos valores de x alrededor del punto objetivo."
+                    title: "x approaches a",
+                    explanation: "We examine values of x around the target point."
                 )
                 KeyIdeaRow(
                     number: "02",
-                    title: "f(x) se aproxima a L",
-                    explanation: "Los resultados muestran una tendencia hacia el valor límite."
+                    title: "f(x) approaches L",
+                    explanation: "The outputs show a trend toward the limit value."
                 )
                 KeyIdeaRow(
                     number: "03",
-                    title: "Llegar no es obligatorio",
-                    explanation: "El límite puede existir aunque la función no esté definida en a."
+                    title: "Reaching is not required",
+                    explanation: "The limit may exist even when the function is undefined at a."
                 )
             }
 
@@ -82,7 +82,7 @@ struct ModuleOneSummaryView: View {
 
     private var checkpointColumn: some View {
         VStack(alignment: .leading, spacing: 18) {
-            LessonEyebrow(text: "Comprobación rápida")
+            LessonEyebrow(text: "Quick check")
 
             ModuleCard {
                 VStack(alignment: .leading, spacing: 18) {
@@ -91,19 +91,19 @@ struct ModuleOneSummaryView: View {
                             .font(.system(size: 19, weight: .bold))
                             .foregroundStyle(AppTheme.softGold)
 
-                        Text("Antes de continuar")
+                        Text("Before You Continue")
                             .font(.system(size: 15, weight: .bold, design: .rounded))
                             .foregroundStyle(AppTheme.warmWhite)
                     }
 
-                    Text("¿Puede existir el límite de una función en x = a aunque f(a) no esté definida?")
+                    Text("Can the limit of a function exist as x approaches a even if f(a) is undefined?")
                         .font(.system(size: 18, weight: .bold, design: .rounded))
                         .foregroundStyle(AppTheme.warmWhite)
                         .fixedSize(horizontal: false, vertical: true)
 
                     HStack(spacing: 12) {
                         AnswerButton(
-                            title: "Sí",
+                            title: "Yes",
                             isSelected: selectedAnswer == true,
                             color: AppTheme.success
                         ) {
@@ -126,8 +126,8 @@ struct ModuleOneSummaryView: View {
 
                             Text(
                                 selectedAnswer
-                                    ? "Correcto. El límite depende de los valores cercanos a a; no exige que f(a) exista."
-                                    : "Todavía no. Recuerda el hueco del ejemplo: f(2) no existe, pero los valores cercanos se aproximan a 4."
+                                    ? "Correct. A limit depends on values near a; it does not require f(a) to exist."
+                                    : "Not yet. Remember the hole in the example: f(2) does not exist, but nearby values approach 4."
                             )
                             .font(.system(size: 12.5, weight: .medium, design: .rounded))
                             .foregroundStyle(AppTheme.warmWhite)
@@ -147,11 +147,11 @@ struct ModuleOneSummaryView: View {
                         .foregroundStyle(AppTheme.softGold)
 
                     VStack(alignment: .leading, spacing: 7) {
-                        Text("Idea clave del módulo")
+                        Text("Key Idea from This Module")
                             .font(.system(size: 12, weight: .bold, design: .rounded))
                             .foregroundStyle(AppTheme.softGold)
 
-                        Text("El límite describe a qué valor se aproxima una función, aunque la función no necesariamente llegue a tomar ese valor.")
+                        Text("A limit describes the value a function approaches, even if the function never actually takes that value.")
                             .font(.system(size: 15, weight: .semibold, design: .rounded))
                             .foregroundStyle(AppTheme.warmWhite)
                             .lineSpacing(4)
@@ -160,7 +160,7 @@ struct ModuleOneSummaryView: View {
                 }
             }
 
-            Text("Al terminar, continuarás con la representación numérica mediante tablas.")
+            Text("When you finish, you will continue with numerical representations using tables.")
                 .font(.system(size: 11.5, weight: .medium, design: .rounded))
                 .foregroundStyle(AppTheme.mutedText)
         }

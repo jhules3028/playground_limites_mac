@@ -29,13 +29,13 @@ struct ModuleSixIntroductionView: View {
 
     private var explanationPanel: some View {
         VStack(alignment: .leading, spacing: 15) {
-            LessonEyebrow(text: "Pantalla 1 · Relacionar")
+            LessonEyebrow(text: "Screen 1 · Connect")
 
-            Text("Continuidad: límite y función se encuentran")
+            Text("Continuity: Where Limit and Function Meet")
                 .font(.system(size: 29, weight: .heavy, design: .rounded))
                 .foregroundStyle(AppTheme.warmWhite)
 
-            Text("Intuitivamente, una función es continua si su gráfica puede atravesar el punto sin saltar ni dejar un hueco. Matemáticamente necesitamos comprobar tres condiciones, no sólo mirar si la curva parece unida.")
+            Text("Intuitively, a function is continuous if its graph can pass through the point without jumping or leaving a hole. Mathematically, we must verify three conditions, not merely check whether the curve looks connected.")
                 .font(.system(size: 13.5, design: .rounded))
                 .foregroundStyle(AppTheme.mutedText)
                 .lineSpacing(4)
@@ -43,7 +43,7 @@ struct ModuleSixIntroductionView: View {
 
             ModuleCard {
                 VStack(spacing: 8) {
-                    Text("CONTINUIDAD EN x = a")
+                    Text("CONTINUITY AT x = a")
                         .font(.system(size: 9.5, weight: .bold, design: .rounded))
                         .tracking(1.3)
                         .foregroundStyle(AppTheme.softGold)
@@ -52,7 +52,7 @@ struct ModuleSixIntroductionView: View {
                         .font(.system(size: 25, weight: .semibold, design: .serif))
                         .foregroundStyle(AppTheme.warmWhite)
 
-                    Text("Esta igualdad sólo tiene sentido después de verificar que ambos lados existen.")
+                    Text("This equality makes sense only after verifying that both sides exist.")
                         .font(.system(size: 11.5, weight: .medium, design: .rounded))
                         .foregroundStyle(AppTheme.mutedText)
                         .multilineTextAlignment(.center)
@@ -61,7 +61,7 @@ struct ModuleSixIntroductionView: View {
                 .frame(maxWidth: .infinity)
             }
 
-            Text("Si falla una sola condición, la función no es continua en ese punto. Eso no significa que toda la función sea inútil: la discontinuidad puede estar localizada únicamente en x = a.")
+            Text("If even one condition fails, the function is not continuous at that point. This does not make the entire function useless: the discontinuity may be located only at x = a.")
                 .font(.system(size: 11.8, weight: .semibold, design: .rounded))
                 .foregroundStyle(AppTheme.warmWhite)
                 .lineSpacing(2)
@@ -74,36 +74,36 @@ struct ModuleSixIntroductionView: View {
 
     private var conditionsPanel: some View {
         VStack(alignment: .leading, spacing: 13) {
-            LessonEyebrow(text: "Las tres preguntas obligatorias")
+            LessonEyebrow(text: "The Three Required Questions")
 
             IntroConditionCard(
                 number: 1,
-                title: "¿Existe f(a)?",
-                expression: "f(a) debe estar definida",
-                explanation: "Busca un punto lleno o un valor asignado exactamente en x = a.",
+                title: "Does f(a) Exist?",
+                expression: "f(a) must be defined",
+                explanation: "Look for a filled point or a value assigned exactly at x = a.",
                 color: AppTheme.lightBlue
             )
 
             IntroConditionCard(
                 number: 2,
-                title: "¿Existe el límite?",
+                title: "Does the Limit Exist?",
                 expression: "limₓ→ₐ⁻ f(x) = limₓ→ₐ⁺ f(x)",
-                explanation: "La aproximación por izquierda y derecha debe conducir al mismo número.",
+                explanation: "The approaches from the left and right must lead to the same number.",
                 color: AppTheme.softGold
             )
 
             IntroConditionCard(
                 number: 3,
-                title: "¿Coinciden?",
+                title: "Do They Match?",
                 expression: "limₓ→ₐ f(x) = f(a)",
-                explanation: "El valor de la tendencia debe ser exactamente el valor asignado a la función.",
+                explanation: "The value being approached must equal the value assigned to the function.",
                 color: AppTheme.success
             )
 
             HStack(spacing: 9) {
-                ContinuityPreviewPill(title: "Continua", icon: "checkmark.circle.fill", color: AppTheme.success)
-                ContinuityPreviewPill(title: "Hueco", icon: "circle.dashed", color: AppTheme.softGold)
-                ContinuityPreviewPill(title: "Salto", icon: "arrow.up.and.down.circle.fill", color: AppTheme.error)
+                ContinuityPreviewPill(title: "Continuous", icon: "checkmark.circle.fill", color: AppTheme.success)
+                ContinuityPreviewPill(title: "Hole", icon: "circle.dashed", color: AppTheme.softGold)
+                ContinuityPreviewPill(title: "Jump", icon: "arrow.up.and.down.circle.fill", color: AppTheme.error)
             }
         }
     }

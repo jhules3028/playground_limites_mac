@@ -10,22 +10,22 @@ enum AlgebraicMethod: String, CaseIterable, Identifiable {
     var title: String {
         switch self {
         case .directSubstitution:
-            return "Sustitución directa"
+            return "Direct Substitution"
         case .factoring:
-            return "Factorización"
+            return "Factoring"
         case .rationalization:
-            return "Racionalización"
+            return "Rationalization"
         }
     }
 
     var summary: String {
         switch self {
         case .directSubstitution:
-            return "Sustituye a cuando la expresión está definida y no aparece una forma problemática."
+            return "Substitute a when the expression is defined and no problematic form appears."
         case .factoring:
-            return "Úsala cuando un polinomio puede revelar un factor común que provoca la forma 0/0."
+            return "Use it when a polynomial can reveal a common factor that causes the form 0/0."
         case .rationalization:
-            return "Usa el conjugado cuando intervienen raíces y la sustitución produce 0/0."
+            return "Use the conjugate when roots are involved and substitution produces 0/0."
         }
     }
 }

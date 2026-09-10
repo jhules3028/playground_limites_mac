@@ -31,13 +31,13 @@ struct ModuleFiveDirectView: View {
 
     private var explanationPanel: some View {
         VStack(alignment: .leading, spacing: 15) {
-            LessonEyebrow(text: "Pantalla 1 · Sustituir")
+            LessonEyebrow(text: "Screen 1 · Substitute")
 
-            Text("Del comportamiento al cálculo")
+            Text("From Behavior to Calculation")
                 .font(.system(size: 30, weight: .heavy, design: .rounded))
                 .foregroundStyle(AppTheme.warmWhite)
 
-            Text("Hasta ahora observamos tablas y gráficas. El cálculo algebraico permite obtener el límite exactamente, siempre que manipulemos la expresión con cuidado.")
+            Text("So far, we have examined tables and graphs. Algebraic techniques let us find the exact limit, provided that we manipulate the expression carefully.")
                 .font(.system(size: 13.5, design: .rounded))
                 .foregroundStyle(AppTheme.mutedText)
                 .lineSpacing(4)
@@ -45,15 +45,15 @@ struct ModuleFiveDirectView: View {
 
             ModuleCard {
                 VStack(alignment: .leading, spacing: 10) {
-                    Label("Primera estrategia", systemImage: "1.circle.fill")
+                    Label("First Strategy", systemImage: "1.circle.fill")
                         .font(.system(size: 12, weight: .bold, design: .rounded))
                         .foregroundStyle(AppTheme.softGold)
 
-                    Text("Sustituye directamente x = a.")
+                    Text("Substitute x = a directly.")
                         .font(.system(size: 17, weight: .bold, design: .rounded))
                         .foregroundStyle(AppTheme.warmWhite)
 
-                    Text("Si obtienes un número real y la expresión está definida, ese valor es el límite. Los polinomios, por ejemplo, son continuos y normalmente permiten este procedimiento.")
+                    Text("If you obtain a real number and the expression is defined, that value is the limit. Polynomials, for example, are continuous and usually allow this procedure.")
                         .font(.system(size: 11.8, weight: .medium, design: .rounded))
                         .foregroundStyle(AppTheme.mutedText)
                         .lineSpacing(2)
@@ -62,9 +62,9 @@ struct ModuleFiveDirectView: View {
             }
 
             VStack(alignment: .leading, spacing: 8) {
-                MethodReminder(icon: "checkmark.circle.fill", text: "Número real: termina el cálculo.", color: AppTheme.success)
-                MethodReminder(icon: "exclamationmark.triangle.fill", text: "Forma 0/0: transforma la expresión.", color: AppTheme.softGold)
-                MethodReminder(icon: "arrow.triangle.2.circlepath", text: "Después de transformar, sustituye otra vez.", color: AppTheme.lightBlue)
+                MethodReminder(icon: "checkmark.circle.fill", text: "Real number: finish the calculation.", color: AppTheme.success)
+                MethodReminder(icon: "exclamationmark.triangle.fill", text: "Form 0/0: transform the expression.", color: AppTheme.softGold)
+                MethodReminder(icon: "arrow.triangle.2.circlepath", text: "After transforming, substitute again.", color: AppTheme.lightBlue)
             }
         }
     }
@@ -73,8 +73,8 @@ struct ModuleFiveDirectView: View {
         VStack(alignment: .leading, spacing: 13) {
             HStack(alignment: .bottom) {
                 VStack(alignment: .leading, spacing: 4) {
-                    LessonEyebrow(text: "Ejemplo guiado")
-                    Text("Una función lineal")
+                    LessonEyebrow(text: "Guided Example")
+                    Text("A Linear Function")
                         .font(.system(size: 23, weight: .bold, design: .rounded))
                         .foregroundStyle(AppTheme.warmWhite)
                 }
@@ -90,17 +90,17 @@ struct ModuleFiveDirectView: View {
                 VStack(alignment: .leading, spacing: 15) {
                     AlgebraStepRow(
                         number: 1,
-                        title: "Identifica el punto objetivo",
+                        title: "Identify the Target Point",
                         expression: "x → 2",
-                        explanation: "El valor que sustituiremos en la expresión es a = 2."
+                        explanation: "The value we will substitute into the expression is a = 2."
                     )
 
                     if revealedSteps >= 2 {
                         AlgebraStepRow(
                             number: 2,
-                            title: "Sustituye x por 2",
+                            title: "Substitute 2 for x",
                             expression: "3(2) + 1",
-                            explanation: "La sustitución no crea una división entre cero ni otra expresión indefinida.",
+                            explanation: "The substitution does not create division by zero or another undefined expression.",
                             color: AppTheme.softGold
                         )
                         .transition(.opacity.combined(with: .move(edge: .top)))
@@ -109,9 +109,9 @@ struct ModuleFiveDirectView: View {
                     if revealedSteps >= 3 {
                         AlgebraStepRow(
                             number: 3,
-                            title: "Realiza las operaciones",
+                            title: "Perform the Operations",
                             expression: "3(2) + 1 = 6 + 1 = 7",
-                            explanation: "Como obtuvimos un número real, el procedimiento termina aquí.",
+                            explanation: "Because we obtained a real number, the procedure ends here.",
                             color: AppTheme.success
                         )
                         .transition(.opacity.combined(with: .move(edge: .top)))
@@ -121,7 +121,7 @@ struct ModuleFiveDirectView: View {
 
             Button(action: revealNextStep) {
                 Label(
-                    revealedSteps == 3 ? "Reiniciar procedimiento" : "Mostrar el siguiente paso",
+                    revealedSteps == 3 ? "Restart Procedure" : "Show the Next Step",
                     systemImage: revealedSteps == 3 ? "arrow.counterclockwise" : "arrow.down.circle.fill"
                 )
                 .font(.system(size: 12.5, weight: .bold, design: .rounded))
@@ -134,9 +134,9 @@ struct ModuleFiveDirectView: View {
             .buttonStyle(.plain)
 
             AlgebraFormulaCard(
-                eyebrow: "Conclusión",
+                eyebrow: "Conclusion",
                 expression: "limₓ→₂ (3x + 1) = 7",
-                explanation: "El límite coincide con el valor de la función en x = 2 porque la expresión lineal es continua en ese punto.",
+                explanation: "The limit equals the function value at x = 2 because the linear expression is continuous at that point.",
                 color: AppTheme.success
             )
         }

@@ -10,8 +10,8 @@ struct ModuleFourPracticeView: View {
                 VStack(alignment: .leading, spacing: 17) {
                     HStack(alignment: .bottom) {
                         VStack(alignment: .leading, spacing: 6) {
-                            LessonEyebrow(text: "Pantalla 5 · Comprobar")
-                            Text("Pon a prueba los dos lados")
+                            LessonEyebrow(text: "Screen 5 · Check")
+                            Text("Test Both Sides")
                                 .font(.system(size: 30, weight: .heavy, design: .rounded))
                                 .foregroundStyle(AppTheme.warmWhite)
                         }
@@ -46,11 +46,11 @@ struct ModuleFourPracticeView: View {
                                 .foregroundStyle(AppTheme.softGold)
 
                             VStack(alignment: .leading, spacing: 5) {
-                                Text("Antes de concluir")
+                                Text("Before You Conclude")
                                     .font(.system(size: 12, weight: .bold, design: .rounded))
                                     .foregroundStyle(AppTheme.softGold)
 
-                                Text("Calcula el límite izquierdo, calcula el derecho y compáralos. Sólo si coinciden puedes afirmar que existe el límite bilateral.")
+                                Text("Calculate the left-hand limit, calculate the right-hand limit, and compare them. Only when they agree can you conclude that the two-sided limit exists.")
                                     .font(.system(size: 12.5, weight: .semibold, design: .rounded))
                                     .foregroundStyle(AppTheme.warmWhite)
                                     .lineSpacing(2)
@@ -72,26 +72,26 @@ struct ModuleFourPracticeView: View {
             VStack(alignment: .leading, spacing: 11) {
                 QuestionNumberBadge(number: 1, color: AppTheme.lightBlue)
 
-                Text("¿Qué indica el signo menos en x → a⁻?")
+                Text("What does the minus sign in x → a⁻ indicate?")
                     .font(.system(size: 16, weight: .bold, design: .rounded))
                     .foregroundStyle(AppTheme.warmWhite)
                     .fixedSize(horizontal: false, vertical: true)
 
-                LateralAnswerOption(text: "x toma valores menores que a.", isSelected: firstAnswer == 0) {
+                LateralAnswerOption(text: "x takes values less than a.", isSelected: firstAnswer == 0) {
                     firstAnswer = 0
                 }
-                LateralAnswerOption(text: "Los resultados siempre son negativos.", isSelected: firstAnswer == 1) {
+                LateralAnswerOption(text: "The results are always negative.", isSelected: firstAnswer == 1) {
                     firstAnswer = 1
                 }
-                LateralAnswerOption(text: "La función disminuye obligatoriamente.", isSelected: firstAnswer == 2) {
+                LateralAnswerOption(text: "The function must decrease.", isSelected: firstAnswer == 2) {
                     firstAnswer = 2
                 }
 
                 if let firstAnswer {
                     LateralFeedback(
                         isCorrect: firstAnswer == 0,
-                        correctText: "Correcto. Nos acercamos usando valores ubicados a la izquierda de a.",
-                        incorrectText: "El signo describe una dirección, no el signo del resultado ni si la función crece o disminuye."
+                        correctText: "Correct. We approach using values located to the left of a.",
+                        incorrectText: "The sign describes a direction, not the sign of the result or whether the function increases or decreases."
                     )
                 }
             }
@@ -103,26 +103,26 @@ struct ModuleFourPracticeView: View {
             VStack(alignment: .leading, spacing: 11) {
                 QuestionNumberBadge(number: 2, color: AppTheme.softGold)
 
-                Text("Si L⁻ = 2 y L⁺ = 5, ¿qué ocurre con limₓ→ₐ f(x)?")
+                Text("If L⁻ = 2 and L⁺ = 5, what happens to limₓ→ₐ f(x)?")
                     .font(.system(size: 16, weight: .bold, design: .rounded))
                     .foregroundStyle(AppTheme.warmWhite)
                     .fixedSize(horizontal: false, vertical: true)
 
-                LateralAnswerOption(text: "Existe y vale 3.5.", isSelected: secondAnswer == 0) {
+                LateralAnswerOption(text: "It exists and equals 3.5.", isSelected: secondAnswer == 0) {
                     secondAnswer = 0
                 }
-                LateralAnswerOption(text: "Existe y vale 5.", isSelected: secondAnswer == 1) {
+                LateralAnswerOption(text: "It exists and equals 5.", isSelected: secondAnswer == 1) {
                     secondAnswer = 1
                 }
-                LateralAnswerOption(text: "No existe porque los lados difieren.", isSelected: secondAnswer == 2) {
+                LateralAnswerOption(text: "It does not exist because the sides differ.", isSelected: secondAnswer == 2) {
                     secondAnswer = 2
                 }
 
                 if let secondAnswer {
                     LateralFeedback(
                         isCorrect: secondAnswer == 2,
-                        correctText: "Correcto. Dos límites laterales diferentes impiden que exista el límite bilateral.",
-                        incorrectText: "No se promedian ni se elige uno. Para existir, los dos límites laterales deben coincidir."
+                        correctText: "Correct. Two different one-sided limits prevent the two-sided limit from existing.",
+                        incorrectText: "Do not average them or choose one. For the two-sided limit to exist, both one-sided limits must agree."
                     )
                 }
             }
@@ -138,8 +138,8 @@ struct ModuleFourPracticeView: View {
     }
 
     private var scoreText: String {
-        guard answeredQuestions > 0 else { return "Responde 2 preguntas" }
-        return "\(correctAnswers) de \(answeredQuestions) correctas"
+        guard answeredQuestions > 0 else { return "Answer 2 questions" }
+        return "\(correctAnswers) of \(answeredQuestions) correct"
     }
 }
 
@@ -148,7 +148,7 @@ private struct QuestionNumberBadge: View {
     let color: Color
 
     var body: some View {
-        Text("PREGUNTA \(number)")
+        Text("QUESTION \(number)")
             .font(.system(size: 9.5, weight: .bold, design: .rounded))
             .tracking(1.3)
             .foregroundStyle(color)

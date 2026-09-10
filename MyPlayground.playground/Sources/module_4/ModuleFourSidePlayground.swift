@@ -48,9 +48,9 @@ struct ModuleFourSidePlayground: View {
 
     private var explanationPanel: some View {
         VStack(alignment: .leading, spacing: 15) {
-            LessonEyebrow(text: side == .left ? "Pantalla 2 · Experimentar" : "Pantalla 3 · Experimentar")
+            LessonEyebrow(text: side == .left ? "Screen 2 · Explore" : "Screen 3 · Explore")
 
-            Text(side == .left ? "Acércate por la izquierda" : "Acércate por la derecha")
+            Text(side == .left ? "Approach from the Left" : "Approach from the Right")
                 .font(.system(size: 29, weight: .heavy, design: .rounded))
                 .foregroundStyle(AppTheme.warmWhite)
 
@@ -62,7 +62,7 @@ struct ModuleFourSidePlayground: View {
 
             ModuleCard {
                 VStack(alignment: .leading, spacing: 9) {
-                    Text(side == .left ? "REGLA PARA x < 2" : "REGLA PARA x > 2")
+                    Text(side == .left ? "RULE FOR x < 2" : "RULE FOR x > 2")
                         .font(.system(size: 9.5, weight: .bold, design: .rounded))
                         .tracking(1.2)
                         .foregroundStyle(color)
@@ -85,7 +85,7 @@ struct ModuleFourSidePlayground: View {
             HStack(alignment: .top, spacing: 10) {
                 Image(systemName: "nosign")
                     .foregroundStyle(AppTheme.softGold)
-                Text("El control nunca permite x = 2. En su punto máximo sólo llega a \(closestXText).")
+                Text("The control never allows x = 2. At its maximum, it only reaches \(closestXText).")
                     .font(.system(size: 11.5, weight: .semibold, design: .rounded))
                     .foregroundStyle(AppTheme.warmWhite)
                     .fixedSize(horizontal: false, vertical: true)
@@ -100,8 +100,8 @@ struct ModuleFourSidePlayground: View {
         VStack(alignment: .leading, spacing: 12) {
             HStack(alignment: .bottom) {
                 VStack(alignment: .leading, spacing: 4) {
-                    LessonEyebrow(text: "Playground lateral")
-                    Text("Nivel de acercamiento")
+                    LessonEyebrow(text: "One-Sided Playground")
+                    Text("Approach Level")
                         .font(.system(size: 22, weight: .bold, design: .rounded))
                         .foregroundStyle(AppTheme.warmWhite)
                 }
@@ -121,17 +121,17 @@ struct ModuleFourSidePlayground: View {
                     .tint(color)
 
                 HStack {
-                    Text("LEJOS")
+                    Text("FAR")
                     Spacer()
-                    Text("MÁS CERCA, SIN LLEGAR A 2  →")
+                    Text("CLOSER, WITHOUT REACHING 2  →")
                 }
                 .font(.system(size: 9.5, weight: .bold, design: .rounded))
                 .foregroundStyle(AppTheme.mutedText)
 
                 HStack(spacing: 8) {
-                    ProximityPreset(title: "Inicio", detail: "lejos") { setProximity(0) }
-                    ProximityPreset(title: "Acercar", detail: "bastante") { setProximity(0.72) }
-                    ProximityPreset(title: "Máximo", detail: closestXText) { setProximity(1) }
+                    ProximityPreset(title: "Start", detail: "far") { setProximity(0) }
+                    ProximityPreset(title: "Closer", detail: "near") { setProximity(0.72) }
+                    ProximityPreset(title: "Maximum", detail: closestXText) { setProximity(1) }
                 }
             }
 
@@ -151,9 +151,9 @@ struct ModuleFourSidePlayground: View {
     private var sideExplanation: String {
         switch side {
         case .left:
-            return "Usaremos únicamente valores menores que 2. Al aumentar el acercamiento, x avanza hacia 2 y f(x) se aproxima a 3."
+            return "We will use only values less than 2. As you move closer, x advances toward 2 and f(x) approaches 3."
         case .right:
-            return "Usaremos únicamente valores mayores que 2. Al aumentar el acercamiento, x retrocede hacia 2 y f(x) se aproxima a 5."
+            return "We will use only values greater than 2. As you move closer, x moves back toward 2 and f(x) approaches 5."
         }
     }
 
@@ -163,7 +163,7 @@ struct ModuleFourSidePlayground: View {
 
     private var observation: String {
         let distance = ModuleFourExample.distanceDescription(for: proximity)
-        return "Estás a \(distance) unidades de a = 2. f(x) = \(ModuleFourExample.format(functionValue)) se acerca al límite lateral \(Int(lateralLimit))."
+        return "You are \(distance) units from a = 2. f(x) = \(ModuleFourExample.format(functionValue)) is approaching the one-sided limit \(Int(lateralLimit))."
     }
 
     private func setProximity(_ value: Double) {

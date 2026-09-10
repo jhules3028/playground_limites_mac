@@ -28,15 +28,15 @@ struct EvaluationResultsView: View {
                 VStack(alignment: .leading, spacing: 12) {
                     HStack(alignment: .bottom) {
                         VStack(alignment: .leading, spacing: 5) {
-                            LessonEyebrow(text: "Revisión del intento")
-                            Text("Aprende de cada respuesta")
+                            LessonEyebrow(text: "Attempt Review")
+                            Text("Learn from Every Answer")
                                 .font(.system(size: 25, weight: .heavy, design: .rounded))
                                 .foregroundStyle(AppTheme.warmWhite)
                         }
 
                         Spacer()
 
-                        Text("Las opciones ya aparecen calificadas")
+                        Text("The options are now graded")
                             .font(.system(size: 10.5, weight: .medium, design: .rounded))
                             .foregroundStyle(AppTheme.mutedText)
                     }
@@ -86,7 +86,7 @@ struct EvaluationResultsView: View {
                 .frame(width: 126, height: 126)
 
                 VStack(alignment: .leading, spacing: 10) {
-                    LessonEyebrow(text: "Resultado final")
+                    LessonEyebrow(text: "Final Result")
                     Text(resultTitle)
                         .font(.system(size: 29, weight: .heavy, design: .rounded))
                         .foregroundStyle(AppTheme.warmWhite)
@@ -97,9 +97,9 @@ struct EvaluationResultsView: View {
                         .fixedSize(horizontal: false, vertical: true)
 
                     HStack(spacing: 16) {
-                        Label("\(correctCount) correctas", systemImage: "checkmark.circle.fill")
+                        Label("\(correctCount) correct", systemImage: "checkmark.circle.fill")
                             .foregroundStyle(AppTheme.success)
-                        Label("\(incorrectCount) por revisar", systemImage: "book.pages.fill")
+                        Label("\(incorrectCount) to review", systemImage: "book.pages.fill")
                             .foregroundStyle(incorrectCount == 0 ? AppTheme.mutedText : AppTheme.softGold)
                     }
                     .font(.system(size: 11.5, weight: .bold, design: .rounded))
@@ -109,7 +109,7 @@ struct EvaluationResultsView: View {
 
                 VStack(spacing: 10) {
                     Button(action: onRetry) {
-                        Label("Intentar otra evaluación", systemImage: "arrow.clockwise")
+                        Label("Try Another Assessment", systemImage: "arrow.clockwise")
                             .font(.system(size: 12.5, weight: .bold, design: .rounded))
                             .foregroundStyle(AppTheme.deepNavy)
                             .padding(.horizontal, 18)
@@ -120,7 +120,7 @@ struct EvaluationResultsView: View {
                     .buttonStyle(.plain)
 
                     Button(action: onExit) {
-                        Label("Volver a la portada", systemImage: "house.fill")
+                        Label("Back to Cover", systemImage: "house.fill")
                             .font(.system(size: 11.5, weight: .semibold, design: .rounded))
                             .foregroundStyle(AppTheme.warmWhite)
                             .padding(.horizontal, 18)
@@ -140,23 +140,23 @@ struct EvaluationResultsView: View {
 
     private var resultTitle: String {
         switch correctCount {
-        case 9...10: return "Excelente dominio"
-        case 7...8: return "Buen trabajo"
-        case 5...6: return "Tienes una base funcional"
-        default: return "Es momento de reforzar"
+        case 9...10: return "Excellent Mastery"
+        case 7...8: return "Good Work"
+        case 5...6: return "You Have a Solid Foundation"
+        default: return "It Is Time to Review"
         }
     }
 
     private var resultMessage: String {
         switch correctCount {
         case 9...10:
-            return "Puedes justificar límites desde varias representaciones. Revisa cualquier detalle pendiente para cerrar con todo."
+            return "You can justify limits using several representations. Review any remaining details to finish strong."
         case 7...8:
-            return "Revisa los errores señalados para consolidar los detalles y vuelve a intentarlo cuando estés listo."
+            return "Review the identified errors to reinforce the details, and try again when you are ready."
         case 5...6:
-            return "Ya tienes una base útil, pero conviene repasar los módulos recomendados antes del siguiente intento."
+            return "You already have a useful foundation, but you should review the recommended modules before your next attempt."
         default:
-            return "Repasa los conceptos fundamentales y vuelve a intentarlo. Cada error incluye una explicación y una ruta de estudio."
+            return "Review the fundamental concepts and try again. Each error includes an explanation and a study path."
         }
     }
 }
@@ -184,7 +184,7 @@ private struct EvaluationReviewCard: View {
                         .foregroundStyle(isCorrect ? AppTheme.success : AppTheme.error)
 
                     VStack(alignment: .leading, spacing: 4) {
-                        Text("PREGUNTA \(number) · MÓDULO \(question.moduleNumber)")
+                        Text("QUESTION \(number) · MODULE \(question.moduleNumber)")
                             .font(.system(size: 9.5, weight: .bold, design: .rounded))
                             .tracking(1.4)
                             .foregroundStyle(isCorrect ? AppTheme.success : AppTheme.error)
@@ -196,7 +196,7 @@ private struct EvaluationReviewCard: View {
 
                     Spacer()
 
-                    Text(isCorrect ? "CORRECTA" : "POR REVISAR")
+                    Text(isCorrect ? "CORRECT" : "REVIEW")
                         .font(.system(size: 9, weight: .black, design: .rounded))
                         .foregroundStyle(isCorrect ? AppTheme.success : AppTheme.error)
                         .padding(.horizontal, 10)
@@ -206,14 +206,14 @@ private struct EvaluationReviewCard: View {
                 }
 
                 if isCorrect {
-                    answerRow(label: "Tu respuesta", value: question.correctOption.text, color: AppTheme.success)
+                    answerRow(label: "Your answer", value: question.correctOption.text, color: AppTheme.success)
                 } else {
-                    answerRow(label: "Tu respuesta", value: selectedOption?.text ?? "Sin respuesta", color: AppTheme.error)
-                    answerRow(label: "Respuesta correcta", value: question.correctOption.text, color: AppTheme.success)
+                    answerRow(label: "Your answer", value: selectedOption?.text ?? "No answer", color: AppTheme.error)
+                    answerRow(label: "Correct answer", value: question.correctOption.text, color: AppTheme.success)
 
                     if let feedback = selectedOption?.incorrectFeedback {
                         VStack(alignment: .leading, spacing: 5) {
-                            Text("¿QUÉ OCURRIÓ?")
+                            Text("WHAT HAPPENED?")
                                 .font(.system(size: 9, weight: .bold, design: .rounded))
                                 .tracking(1.3)
                                 .foregroundStyle(AppTheme.softGold)
@@ -231,7 +231,7 @@ private struct EvaluationReviewCard: View {
                 }
 
                 VStack(alignment: .leading, spacing: 5) {
-                    Text("EXPLICACIÓN")
+                    Text("EXPLANATION")
                         .font(.system(size: 9, weight: .bold, design: .rounded))
                         .tracking(1.3)
                         .foregroundStyle(AppTheme.lightBlue)
@@ -243,7 +243,7 @@ private struct EvaluationReviewCard: View {
                 }
 
                 HStack(spacing: 12) {
-                    Label("Módulo \(question.moduleNumber) — \(question.moduleTitle)", systemImage: "bookmark.fill")
+                    Label("Module \(question.moduleNumber) — \(question.moduleTitle)", systemImage: "bookmark.fill")
                         .font(.system(size: 10.5, weight: .bold, design: .rounded))
                         .foregroundStyle(AppTheme.softGold)
 
@@ -254,7 +254,7 @@ private struct EvaluationReviewCard: View {
                     Spacer()
 
                     Button(action: onStudyModule) {
-                        Label("Volver a estudiar", systemImage: "arrow.up.right")
+                        Label("Review This Module", systemImage: "arrow.up.right")
                             .font(.system(size: 10.5, weight: .bold, design: .rounded))
                             .foregroundStyle(AppTheme.deepNavy)
                             .padding(.horizontal, 13)
@@ -282,4 +282,3 @@ private struct EvaluationReviewCard: View {
         }
     }
 }
-

@@ -10,8 +10,8 @@ struct ModuleSixAssessmentView: View {
                 VStack(alignment: .leading, spacing: 15) {
                     HStack(alignment: .bottom) {
                         VStack(alignment: .leading, spacing: 6) {
-                            LessonEyebrow(text: "Pantalla 5 · Identificar")
-                            Text("Diagnostica la continuidad")
+                            LessonEyebrow(text: "Screen 5 · Identify")
+                            Text("Diagnose Continuity")
                                 .font(.system(size: 29, weight: .heavy, design: .rounded))
                                 .foregroundStyle(AppTheme.warmWhite)
                         }
@@ -46,10 +46,10 @@ struct ModuleSixAssessmentView: View {
                                 .foregroundStyle(AppTheme.softGold)
 
                             VStack(alignment: .leading, spacing: 5) {
-                                Text("Lista de comprobación")
+                                Text("Checklist")
                                     .font(.system(size: 12, weight: .bold, design: .rounded))
                                     .foregroundStyle(AppTheme.softGold)
-                                Text("No decidas por la apariencia solamente: verifica f(a), compara los límites laterales y finalmente comprueba si el límite coincide con f(a).")
+                                Text("Do not decide by appearance alone: verify f(a), compare the one-sided limits, and finally check whether the limit equals f(a).")
                                     .font(.system(size: 12.2, weight: .semibold, design: .rounded))
                                     .foregroundStyle(AppTheme.warmWhite)
                                     .fixedSize(horizontal: false, vertical: true)
@@ -70,7 +70,7 @@ struct ModuleSixAssessmentView: View {
             VStack(alignment: .leading, spacing: 9) {
                 AssessmentLabel(number: 1, color: AppTheme.lightBlue)
 
-                Text("La curva se aproxima a 4 por ambos lados, pero f(2) = 0. ¿Qué caso es?")
+                Text("The curve approaches 4 from both sides, but f(2) = 0. Which case is this?")
                     .font(.system(size: 14.5, weight: .bold, design: .rounded))
                     .foregroundStyle(AppTheme.warmWhite)
                     .fixedSize(horizontal: false, vertical: true)
@@ -79,16 +79,16 @@ struct ModuleSixAssessmentView: View {
                     .frame(height: 125)
 
                 HStack(spacing: 7) {
-                    ContinuityAnswerOption(text: "Continua", isSelected: firstAnswer == 0) { firstAnswer = 0 }
-                    ContinuityAnswerOption(text: "Removible", isSelected: firstAnswer == 1) { firstAnswer = 1 }
-                    ContinuityAnswerOption(text: "Salto", isSelected: firstAnswer == 2) { firstAnswer = 2 }
+                    ContinuityAnswerOption(text: "Continuous", isSelected: firstAnswer == 0) { firstAnswer = 0 }
+                    ContinuityAnswerOption(text: "Removable", isSelected: firstAnswer == 1) { firstAnswer = 1 }
+                    ContinuityAnswerOption(text: "Jump", isSelected: firstAnswer == 2) { firstAnswer = 2 }
                 }
 
                 if let firstAnswer {
                     ContinuityFeedback(
                         isCorrect: firstAnswer == 1,
-                        correctText: "Correcto. El límite vale 4, pero f(2) = 0. Cambiar sólo f(2) a 4 repararía la función.",
-                        incorrectText: "Los dos lados sí coinciden en 4. La falla es que f(2) vale 0, por eso la discontinuidad es removible."
+                        correctText: "Correct. The limit equals 4, but f(2) = 0. Changing only f(2) to 4 would repair the function.",
+                        incorrectText: "Both sides do agree at 4. The issue is that f(2) equals 0, so the discontinuity is removable."
                     )
                 }
             }
@@ -100,15 +100,15 @@ struct ModuleSixAssessmentView: View {
             VStack(alignment: .leading, spacing: 9) {
                 AssessmentLabel(number: 2, color: AppTheme.softGold)
 
-                Text("Se sabe que f(2) = 5, L⁻ = 3 y L⁺ = 5. ¿Por qué no es continua en x = 2?")
+                Text("Suppose f(2) = 5, L⁻ = 3, and L⁺ = 5. Why is the function not continuous at x = 2?")
                     .font(.system(size: 14.5, weight: .bold, design: .rounded))
                     .foregroundStyle(AppTheme.warmWhite)
                     .fixedSize(horizontal: false, vertical: true)
 
                 VStack(spacing: 7) {
-                    DetailedContinuityOption(text: "Porque f(2) no existe.", isSelected: secondAnswer == 0) { secondAnswer = 0 }
-                    DetailedContinuityOption(text: "Porque el límite bilateral no existe.", isSelected: secondAnswer == 1) { secondAnswer = 1 }
-                    DetailedContinuityOption(text: "Porque todo límite debe valer cero.", isSelected: secondAnswer == 2) { secondAnswer = 2 }
+                    DetailedContinuityOption(text: "Because f(2) does not exist.", isSelected: secondAnswer == 0) { secondAnswer = 0 }
+                    DetailedContinuityOption(text: "Because the two-sided limit does not exist.", isSelected: secondAnswer == 1) { secondAnswer = 1 }
+                    DetailedContinuityOption(text: "Because every limit must equal zero.", isSelected: secondAnswer == 2) { secondAnswer = 2 }
                 }
 
                 HStack(spacing: 8) {
@@ -120,8 +120,8 @@ struct ModuleSixAssessmentView: View {
                 if let secondAnswer {
                     ContinuityFeedback(
                         isCorrect: secondAnswer == 1,
-                        correctText: "Correcto. Como 3 ≠ 5, los laterales no forman un límite bilateral y falla la segunda condición.",
-                        incorrectText: "f(2) sí existe y vale 5. El problema es que los límites laterales son diferentes."
+                        correctText: "Correct. Because 3 ≠ 5, the one-sided limits do not form a two-sided limit, so the second condition fails.",
+                        incorrectText: "f(2) does exist and equals 5. The problem is that the one-sided limits are different."
                     )
                 }
             }
@@ -137,8 +137,8 @@ struct ModuleSixAssessmentView: View {
     }
 
     private var scoreText: String {
-        guard answeredQuestions > 0 else { return "2 casos pendientes" }
-        return "\(correctAnswers) de \(answeredQuestions) correctos"
+        guard answeredQuestions > 0 else { return "2 cases remaining" }
+        return "\(correctAnswers) of \(answeredQuestions) correct"
     }
 }
 
@@ -147,7 +147,7 @@ private struct AssessmentLabel: View {
     let color: Color
 
     var body: some View {
-        Text("CASO \(number)")
+        Text("CASE \(number)")
             .font(.system(size: 9.5, weight: .bold, design: .rounded))
             .tracking(1.3)
             .foregroundStyle(color)

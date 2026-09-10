@@ -31,32 +31,32 @@ struct ModuleFiveIndeterminateView: View {
 
     private var meaningPanel: some View {
         VStack(alignment: .leading, spacing: 15) {
-            LessonEyebrow(text: "Pantalla 2 · Interpretar")
+            LessonEyebrow(text: "Screen 2 · Interpret")
 
-            Text("¿Qué significa obtener 0/0?")
+            Text("What Does 0/0 Mean?")
                 .font(.system(size: 30, weight: .heavy, design: .rounded))
                 .foregroundStyle(AppTheme.warmWhite)
 
-            Text("Al sustituir x = 2 en el cociente siguiente, el numerador y el denominador se hacen cero al mismo tiempo.")
+            Text("When x = 2 is substituted into the following quotient, the numerator and denominator become zero at the same time.")
                 .font(.system(size: 13.5, design: .rounded))
                 .foregroundStyle(AppTheme.mutedText)
                 .lineSpacing(4)
                 .fixedSize(horizontal: false, vertical: true)
 
             AlgebraFormulaCard(
-                eyebrow: "Sustitución inicial",
+                eyebrow: "Initial Substitution",
                 expression: "(2² − 4) / (2 − 2) = 0/0",
-                explanation: "La expresión original no puede evaluarse directamente en x = 2.",
+                explanation: "The original expression cannot be evaluated directly at x = 2.",
                 color: AppTheme.softGold
             )
 
             ModuleCard {
                 VStack(alignment: .leading, spacing: 10) {
-                    Text("0/0 es una forma indeterminada")
+                    Text("0/0 Is an Indeterminate Form")
                         .font(.system(size: 15, weight: .bold, design: .rounded))
                         .foregroundStyle(AppTheme.softGold)
 
-                    Text("No significa que el límite sea 0. Tampoco significa automáticamente que sea infinito o que no exista. Sólo nos avisa que la sustitución directa no basta y que necesitamos revelar el comportamiento oculto de la expresión.")
+                    Text("It does not mean that the limit is 0. Nor does it automatically mean that it is infinite or does not exist. It only tells us that direct substitution is not enough and that we need to reveal the expression's hidden behavior.")
                         .font(.system(size: 12, weight: .medium, design: .rounded))
                         .foregroundStyle(AppTheme.warmWhite)
                         .lineSpacing(3)
@@ -68,13 +68,13 @@ struct ModuleFiveIndeterminateView: View {
 
     private var decisionPanel: some View {
         VStack(alignment: .leading, spacing: 14) {
-            LessonEyebrow(text: "Pausa conceptual")
+            LessonEyebrow(text: "Concept Check")
 
-            Text("La señal pide una transformación")
+            Text("The Signal Calls for a Transformation")
                 .font(.system(size: 23, weight: .bold, design: .rounded))
                 .foregroundStyle(AppTheme.warmWhite)
 
-            Text("Nuestro objetivo no es asignarle un valor a 0/0. Buscamos una expresión equivalente para los valores cercanos a 2, aunque en el punto exacto siga existiendo un hueco.")
+            Text("Our goal is not to assign a value to 0/0. We seek an equivalent expression for values near 2, even if a hole remains at the exact point.")
                 .font(.system(size: 13, design: .rounded))
                 .foregroundStyle(AppTheme.mutedText)
                 .lineSpacing(3)
@@ -82,37 +82,37 @@ struct ModuleFiveIndeterminateView: View {
 
             ModuleCard {
                 VStack(alignment: .leading, spacing: 11) {
-                    Text("Después de obtener 0/0, ¿qué conclusión es correcta?")
+                    Text("After obtaining 0/0, which conclusion is correct?")
                         .font(.system(size: 16, weight: .bold, design: .rounded))
                         .foregroundStyle(AppTheme.warmWhite)
                         .fixedSize(horizontal: false, vertical: true)
 
-                    AlgebraChoiceOption(label: "A", text: "El límite es igual a cero.", isSelected: selectedAnswer == 0) {
+                    AlgebraChoiceOption(label: "A", text: "The limit equals zero.", isSelected: selectedAnswer == 0) {
                         selectedAnswer = 0
                     }
-                    AlgebraChoiceOption(label: "B", text: "Debemos transformar la expresión y continuar.", isSelected: selectedAnswer == 1) {
+                    AlgebraChoiceOption(label: "B", text: "We must transform the expression and continue.", isSelected: selectedAnswer == 1) {
                         selectedAnswer = 1
                     }
-                    AlgebraChoiceOption(label: "C", text: "El límite no existe en todos los casos.", isSelected: selectedAnswer == 2) {
+                    AlgebraChoiceOption(label: "C", text: "The limit never exists in these cases.", isSelected: selectedAnswer == 2) {
                         selectedAnswer = 2
                     }
 
                     if let selectedAnswer {
                         AlgebraFeedback(
                             isCorrect: selectedAnswer == 1,
-                            correctText: "Correcto. 0/0 es una señal para buscar otra forma equivalente antes de volver a sustituir.",
-                            incorrectText: "0/0 no determina el resultado del límite. Sólo indica que la sustitución directa fue insuficiente."
+                            correctText: "Correct. 0/0 is a signal to find another equivalent form before substituting again.",
+                            incorrectText: "0/0 does not determine the result of the limit. It only indicates that direct substitution was insufficient."
                         )
                     }
                 }
             }
 
             HStack(spacing: 12) {
-                TransformationHint(icon: "function", title: "Polinomios", detail: "Intenta factorizar.")
-                TransformationHint(icon: "radical", title: "Raíces", detail: "Busca el conjugado.")
+                TransformationHint(icon: "function", title: "Polynomials", detail: "Try factoring.")
+                TransformationHint(icon: "radical", title: "Roots", detail: "Look for the conjugate.")
             }
 
-            Text("En el siguiente ejemplo, x² − 4 es una diferencia de cuadrados. Esa estructura nos indica que la factorización será el camino adecuado.")
+            Text("In the next example, x² − 4 is a difference of squares. That structure tells us that factoring is the appropriate path.")
                 .font(.system(size: 12, weight: .semibold, design: .rounded))
                 .foregroundStyle(AppTheme.warmWhite)
                 .lineSpacing(2)

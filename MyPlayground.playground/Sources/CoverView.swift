@@ -57,12 +57,12 @@ struct CoverView: View {
                 .frame(width: 1, height: 38)
 
             VStack(alignment: .leading, spacing: 4) {
-                Text("UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO")
+                Text("NATIONAL AUTONOMOUS UNIVERSITY OF MEXICO")
                     .font(.system(size: 10, weight: .bold, design: .rounded))
                     .tracking(1.25)
                     .foregroundStyle(AppTheme.mutedText)
 
-                Text("Objeto de aprendizaje · Cálculo I")
+                Text("Learning object · Calculus I")
                     .font(.system(size: 13, weight: .medium, design: .rounded))
                     .foregroundStyle(AppTheme.warmWhite)
             }
@@ -83,17 +83,17 @@ struct CoverView: View {
 
     private var heroContent: some View {
         VStack(alignment: .leading, spacing: 22) {
-            Text("CÁLCULO I  /  LÍMITES")
+            Text("CALCULUS I  /  LIMITS")
                 .font(.system(size: 12, weight: .bold, design: .rounded))
                 .tracking(2.5)
                 .foregroundStyle(AppTheme.softGold)
 
             VStack(alignment: .leading, spacing: 4) {
-                Text("Explora")
+                Text("Explore")
                     .foregroundStyle(AppTheme.warmWhite)
 
                 HStack(alignment: .firstTextBaseline, spacing: 12) {
-                    Text("los límites")
+                    Text("limits")
                         .foregroundStyle(AppTheme.warmWhite)
 
                     Rectangle()
@@ -105,21 +105,21 @@ struct CoverView: View {
             .font(.system(size: 56, weight: .heavy, design: .rounded))
             .minimumScaleFactor(0.75)
 
-            Text("Descubre cómo se comporta una función cuando se aproxima a un punto mediante experiencias visuales, numéricas y algebraicas.")
+            Text("Discover how a function behaves as it approaches a point through visual, numerical, and algebraic experiences.")
                 .font(.system(size: 17, weight: .regular, design: .rounded))
                 .foregroundStyle(AppTheme.mutedText)
                 .lineSpacing(5)
                 .fixedSize(horizontal: false, vertical: true)
 
             HStack(spacing: 10) {
-                FeaturePill(icon: "eye.fill", title: "Observa")
-                FeaturePill(icon: "lightbulb.fill", title: "Comprende")
-                FeaturePill(icon: "checkmark.circle.fill", title: "Practica")
+                FeaturePill(icon: "eye.fill", title: "Observe")
+                FeaturePill(icon: "lightbulb.fill", title: "Understand")
+                FeaturePill(icon: "checkmark.circle.fill", title: "Practice")
             }
 
             Button(action: onStart) {
                 HStack(spacing: 18) {
-                    Text("Comenzar")
+                    Text("Start")
                         .font(.system(size: 16, weight: .bold, design: .rounded))
 
                     Image(systemName: "arrow.right")
@@ -140,14 +140,14 @@ struct CoverView: View {
                 .shadow(color: AppTheme.gold.opacity(0.25), radius: 18, y: 8)
             }
             .buttonStyle(.plain)
-            .accessibilityHint("Abre el primer módulo sobre la idea intuitiva del límite")
+            .accessibilityHint("Opens the first module about the intuitive idea of a limit")
         }
     }
 
     private var footer: some View {
         HStack(alignment: .bottom) {
             VStack(alignment: .leading, spacing: 3) {
-                Text("CREADO POR")
+                Text("CREATED BY")
                     .font(.system(size: 9, weight: .bold, design: .rounded))
                     .tracking(1.8)
                     .foregroundStyle(AppTheme.softGold.opacity(0.9))
@@ -209,7 +209,7 @@ private struct FESLogoView: View {
                 Image(nsImage: logo)
                     .resizable()
                     .scaledToFit()
-                    .accessibilityLabel("Facultad de Estudios Superiores Acatlán")
+                    .accessibilityLabel("Faculty of Higher Studies Acatlán")
             } else {
                 VStack(alignment: .leading, spacing: 1) {
                     Text("FES")
@@ -248,12 +248,12 @@ private struct LimitPreviewCard: View {
         VStack(alignment: .leading, spacing: 18) {
             HStack {
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("UNA IDEA CENTRAL")
+                    Text("A CORE IDEA")
                         .font(.system(size: 10, weight: .bold, design: .rounded))
                         .tracking(1.8)
                         .foregroundStyle(AppTheme.softGold)
 
-                    Text("Acercarse sin necesariamente llegar")
+                    Text("Approaching without necessarily reaching")
                         .font(.system(size: 15, weight: .semibold, design: .rounded))
                         .foregroundStyle(AppTheme.warmWhite)
                 }
@@ -280,7 +280,7 @@ private struct LimitPreviewCard: View {
                 Divider()
                     .overlay(Color.white.opacity(0.14))
                     .frame(height: 38)
-                ValueSummary(label: "límite", value: "4")
+                ValueSummary(label: "limit", value: "4")
             }
 
             Text("lim  (x² − 4) / (x − 2)  =  4")
@@ -393,6 +393,6 @@ private struct LimitCurvePreview: View {
         .padding(4)
         .background(Color.black.opacity(0.12))
         .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-        .accessibilityLabel("Gráfica de una función que se aproxima a un hueco")
+        .accessibilityLabel("Graph of a function approaching a hole")
     }
 }

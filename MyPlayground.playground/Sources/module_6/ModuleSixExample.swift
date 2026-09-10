@@ -10,33 +10,33 @@ enum ContinuityCase: String, CaseIterable, Identifiable {
     var title: String {
         switch self {
         case .continuous:
-            return "Función continua"
+            return "Continuous Function"
         case .removable:
-            return "Discontinuidad removible"
+            return "Removable Discontinuity"
         case .jump:
-            return "Discontinuidad de salto"
+            return "Jump Discontinuity"
         }
     }
 
     var shortTitle: String {
         switch self {
         case .continuous:
-            return "Continua"
+            return "Continuous"
         case .removable:
-            return "Hueco"
+            return "Hole"
         case .jump:
-            return "Salto"
+            return "Jump"
         }
     }
 
     var explanation: String {
         switch self {
         case .continuous:
-            return "La curva llega al mismo punto desde ambos lados y la función toma exactamente ese valor."
+            return "The curve reaches the same point from both sides, and the function takes exactly that value."
         case .removable:
-            return "La curva se aproxima a 4, pero el punto exacto está definido en 0. El límite existe aunque la función no sea continua."
+            return "The curve approaches 4, but the exact point is defined at 0. The limit exists even though the function is not continuous."
         case .jump:
-            return "Cada lado se aproxima a una altura diferente. Por eso el límite bilateral no existe."
+            return "Each side approaches a different height. Therefore, the two-sided limit does not exist."
         }
     }
 
@@ -45,9 +45,9 @@ enum ContinuityCase: String, CaseIterable, Identifiable {
         case .continuous:
             return "f(x) = x + 2"
         case .removable:
-            return "f(x) = ⎧ x + 2,  si x ≠ 2\n       ⎩ 0,      si x = 2"
+            return "f(x) = ⎧ x + 2,  if x ≠ 2\n       ⎩ 0,      if x = 2"
         case .jump:
-            return "f(x) = x + 1 si x < 2;  x + 3 si x ≥ 2"
+            return "f(x) = x + 1 if x < 2;  x + 3 if x ≥ 2"
         }
     }
 }

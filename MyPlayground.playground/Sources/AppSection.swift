@@ -15,21 +15,21 @@ enum AppSection: Int, CaseIterable, Identifiable {
     var title: String {
         switch self {
         case .cover:
-            return "Portada"
+            return "Cover"
         case .intuitiveLimit:
-            return "Idea intuitiva"
+            return "Intuitive idea"
         case .numericalLimit:
-            return "Representación numérica"
+            return "Numerical representation"
         case .graphicalLimit:
-            return "Interpretación gráfica"
+            return "Graphical interpretation"
         case .oneSidedLimits:
-            return "Límites laterales"
+            return "One-sided limits"
         case .algebraicLimit:
-            return "Cálculo algebraico"
+            return "Algebraic techniques"
         case .continuity:
-            return "Continuidad"
+            return "Continuity"
         case .assessment:
-            return "Evaluación final"
+            return "Final assessment"
         }
     }
 

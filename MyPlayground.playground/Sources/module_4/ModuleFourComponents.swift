@@ -17,15 +17,15 @@ struct ModuleFourHeader: View {
                     .overlay(Circle().stroke(Color.white.opacity(0.12), lineWidth: 1))
             }
             .buttonStyle(.plain)
-            .help("Volver a la portada")
+            .help("Back to cover")
 
             VStack(alignment: .leading, spacing: 3) {
-                Text("MÓDULO 4")
+                Text("MODULE 4")
                     .font(.system(size: 10, weight: .bold, design: .rounded))
                     .tracking(2)
                     .foregroundStyle(AppTheme.softGold)
 
-                Text("Límites laterales")
+                Text("One-Sided Limits")
                     .font(.system(size: 18, weight: .bold, design: .rounded))
                     .foregroundStyle(AppTheme.warmWhite)
             }
@@ -61,7 +61,7 @@ struct ModuleFourNavigation: View {
     var body: some View {
         HStack {
             Button(action: onPrevious) {
-                Label(currentPage == 0 ? "Módulo 3" : "Anterior", systemImage: "arrow.left")
+                Label(currentPage == 0 ? "Module 3" : "Previous", systemImage: "arrow.left")
                     .font(.system(size: 14, weight: .semibold, design: .rounded))
                     .foregroundStyle(AppTheme.warmWhite)
                     .padding(.horizontal, 18)
@@ -75,7 +75,7 @@ struct ModuleFourNavigation: View {
 
             Button(action: onNext) {
                 HStack(spacing: 12) {
-                    Text(currentPage == pageCount - 1 ? "Terminar módulo" : "Siguiente")
+                    Text(currentPage == pageCount - 1 ? "Finish Module" : "Next")
                     Image(systemName: currentPage == pageCount - 1 ? "checkmark" : "arrow.right")
                 }
                 .font(.system(size: 14, weight: .bold, design: .rounded))
@@ -113,7 +113,7 @@ struct LateralDefinitionCard: View {
         VStack(alignment: .leading, spacing: 8) {
             HStack {
                 Label(
-                    side == .left ? "POR LA IZQUIERDA" : "POR LA DERECHA",
+                    side == .left ? "FROM THE LEFT" : "FROM THE RIGHT",
                     systemImage: side == .left ? "arrow.right" : "arrow.left"
                 )
                 .font(.system(size: 9.5, weight: .bold, design: .rounded))

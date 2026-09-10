@@ -41,7 +41,7 @@ struct ModuleFourGraph: View {
         .padding(8)
         .background(Color.black.opacity(0.14))
         .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-        .accessibilityLabel("Gráfica de los límites laterales alrededor de a igual a 2")
+        .accessibilityLabel("Graph of the one-sided limits around a equal to 2")
     }
 
     private func graphPoint(x: Double, y: Double, in size: CGSize) -> CGPoint {

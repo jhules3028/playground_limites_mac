@@ -34,13 +34,13 @@ struct ModuleOneConceptView: View {
 
     private var definitionColumn: some View {
         VStack(alignment: .leading, spacing: 18) {
-            LessonEyebrow(text: "Pantalla 1 · Comprender")
+            LessonEyebrow(text: "Screen 1 · Understand")
 
-            Text("¿Qué es un límite?")
+            Text("What Is a Limit?")
                 .font(.system(size: 38, weight: .heavy, design: .rounded))
                 .foregroundStyle(AppTheme.warmWhite)
 
-            Text("Un límite describe el valor al que se aproxima una función cuando la variable independiente se acerca a un punto objetivo.")
+            Text("A limit describes the value a function approaches as the independent variable gets closer to a target point.")
                 .font(.system(size: 16, weight: .regular, design: .rounded))
                 .foregroundStyle(AppTheme.mutedText)
                 .lineSpacing(5)
@@ -56,7 +56,7 @@ struct ModuleOneConceptView: View {
                         .fill(AppTheme.gold.opacity(0.55))
                         .frame(height: 1)
 
-                    Text("Cuando x se acerca a a, los valores de f(x) se acercan a L.")
+                    Text("As x approaches a, the values of f(x) approach L.")
                         .font(.system(size: 13, weight: .medium, design: .rounded))
                         .foregroundStyle(AppTheme.softGold)
                         .multilineTextAlignment(.center)
@@ -66,11 +66,11 @@ struct ModuleOneConceptView: View {
 
             ModuleCard {
                 VStack(alignment: .leading, spacing: 12) {
-                    Label("Piensa en acercarte a una puerta", systemImage: "figure.walk")
+                    Label("Imagine walking toward a door", systemImage: "figure.walk")
                         .font(.system(size: 14, weight: .bold, design: .rounded))
                         .foregroundStyle(AppTheme.warmWhite)
 
-                    Text("Cada paso reduce la distancia: 1 m, ½ m, ¼ m, ⅛ m… Tu posición se aproxima a la puerta, aunque decidieras no tocarla.")
+                    Text("Each step reduces the distance: 1 m, ½ m, ¼ m, ⅛ m… Your position approaches the door even if you decide not to touch it.")
                         .font(.system(size: 12.5, design: .rounded))
                         .foregroundStyle(AppTheme.mutedText)
                         .fixedSize(horizontal: false, vertical: true)
@@ -84,35 +84,35 @@ struct ModuleOneConceptView: View {
 
     private var conceptColumn: some View {
         VStack(alignment: .leading, spacing: 18) {
-            LessonEyebrow(text: "Conceptos esenciales")
+            LessonEyebrow(text: "Essential concepts")
 
-            Text("Las piezas de la idea")
+            Text("The Parts of the Idea")
                 .font(.system(size: 25, weight: .bold, design: .rounded))
                 .foregroundStyle(AppTheme.warmWhite)
 
             LazyVGrid(columns: columns, spacing: 12) {
                 ConceptTile(
                     symbol: "x",
-                    title: "Variable independiente",
-                    explanation: "Es el valor que controlamos y acercamos al objetivo."
+                    title: "Independent variable",
+                    explanation: "The value we control and move toward the target."
                 )
 
                 ConceptTile(
                     symbol: "a",
-                    title: "Valor objetivo",
-                    explanation: "Es el punto al que se aproxima x."
+                    title: "Target value",
+                    explanation: "The point that x approaches."
                 )
 
                 ConceptTile(
                     symbol: "→",
-                    title: "Aproximación",
-                    explanation: "Indica acercamiento; no obliga a llegar exactamente."
+                    title: "Approach",
+                    explanation: "It means getting closer; reaching the exact point is not required."
                 )
 
                 ConceptTile(
                     symbol: "L",
-                    title: "Valor límite",
-                    explanation: "Es el valor al que se aproximan los resultados de f(x)."
+                    title: "Limit value",
+                    explanation: "The value approached by the outputs of f(x)."
                 )
             }
 
@@ -123,11 +123,11 @@ struct ModuleOneConceptView: View {
                         .foregroundStyle(AppTheme.softGold)
 
                     VStack(alignment: .leading, spacing: 6) {
-                        Text("Idea clave")
+                        Text("Key idea")
                             .font(.system(size: 13, weight: .bold, design: .rounded))
                             .foregroundStyle(AppTheme.softGold)
 
-                        Text("Nos interesa el comportamiento alrededor del punto, no solamente lo que ocurre exactamente en él.")
+                        Text("We care about the behavior around the point, not only what happens exactly at that point.")
                             .font(.system(size: 14, weight: .medium, design: .rounded))
                             .foregroundStyle(AppTheme.warmWhite)
                             .fixedSize(horizontal: false, vertical: true)

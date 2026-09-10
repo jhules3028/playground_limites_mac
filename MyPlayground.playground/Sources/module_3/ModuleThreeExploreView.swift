@@ -32,13 +32,13 @@ struct ModuleThreeExploreView: View {
 
     private var controlsPanel: some View {
         VStack(alignment: .leading, spacing: 15) {
-            LessonEyebrow(text: "Pantalla 2 · Explorar")
+            LessonEyebrow(text: "Screen 2 · Explore")
 
-            Text("Cambia el valor en el punto")
+            Text("Change the Value at the Point")
                 .font(.system(size: 28, weight: .heavy, design: .rounded))
                 .foregroundStyle(AppTheme.warmWhite)
 
-            Text("Elige qué ocurre exactamente en a = 2. La curva cercana permanece igual para que compares el límite con f(a).")
+            Text("Choose what happens exactly at a = 2. The nearby curve remains unchanged so you can compare the limit with f(a).")
                 .font(.system(size: 13, design: .rounded))
                 .foregroundStyle(AppTheme.mutedText)
                 .lineSpacing(3)
@@ -66,8 +66,8 @@ struct ModuleThreeExploreView: View {
         VStack(alignment: .leading, spacing: 12) {
             HStack(alignment: .bottom) {
                 VStack(alignment: .leading, spacing: 4) {
-                    LessonEyebrow(text: "Gráfica interactiva")
-                    Text("Mueve x hacia a = 2")
+                    LessonEyebrow(text: "Interactive graph")
+                    Text("Move x Toward a = 2")
                         .font(.system(size: 22, weight: .bold, design: .rounded))
                         .foregroundStyle(AppTheme.warmWhite)
 
@@ -86,7 +86,7 @@ struct ModuleThreeExploreView: View {
             HStack(spacing: 10) {
                 GraphMetricCard(label: "x", value: ModuleThreeExample.format(xValue), color: AppTheme.lightBlue)
                 GraphMetricCard(label: "f(x)", value: displayedFunctionValue, color: currentFunctionColor)
-                GraphMetricCard(label: "límite L", value: "4.00", color: AppTheme.softGold)
+                GraphMetricCard(label: "limit L", value: "4.00", color: AppTheme.softGold)
                 GraphMetricCard(label: "f(a)", value: targetFunctionValue, color: caseColor)
             }
 
@@ -95,9 +95,9 @@ struct ModuleThreeExploreView: View {
                     .tint(AppTheme.lightBlue)
 
                 HStack {
-                    PresetButton(title: "Izquierda", value: "1.90") { setX(1.9) }
-                    PresetButton(title: "En a", value: "2.00") { setX(2.0) }
-                    PresetButton(title: "Derecha", value: "2.10") { setX(2.1) }
+                    PresetButton(title: "Left", value: "1.90") { setX(1.9) }
+                    PresetButton(title: "At a", value: "2.00") { setX(2.0) }
+                    PresetButton(title: "Right", value: "2.10") { setX(2.1) }
                 }
             }
 
@@ -116,7 +116,7 @@ struct ModuleThreeExploreView: View {
 
     private var displayedFunctionValue: String {
         guard let value = ModuleThreeExample.functionValue(at: xValue, targetCase: targetCase) else {
-            return "no definida"
+            return "undefined"
         }
         return ModuleThreeExample.format(value)
     }
@@ -126,7 +126,7 @@ struct ModuleThreeExploreView: View {
         case .continuous:
             return "4.00"
         case .undefined:
-            return "no existe"
+            return "does not exist"
         case .different:
             return "6.00"
         }
@@ -151,16 +151,16 @@ struct ModuleThreeExploreView: View {
         if abs(xValue - ModuleThreeExample.targetX) < 0.005 {
             switch targetCase {
             case .continuous:
-                return "En x = 2, la función vale 4. Aquí f(a) coincide con el límite."
+                return "At x = 2, the function equals 4. Here, f(a) matches the limit."
             case .undefined:
-                return "En x = 2 aparece un hueco: f(a) no existe, aunque el límite sigue siendo 4."
+                return "There is a hole at x = 2: f(a) does not exist, although the limit is still 4."
             case .different:
-                return "En x = 2, el punto rojo fija f(a) = 6; la curva cercana continúa apuntando a L = 4."
+                return "At x = 2, the red point sets f(a) = 6; the nearby curve still points to L = 4."
             }
         }
 
-        let side = xValue < ModuleThreeExample.targetX ? "izquierda" : "derecha"
-        return "Te acercas por la \(side): f(x) = \(ModuleThreeExample.format(ModuleThreeExample.nearbyValue(at: xValue))). Al aproximarte a 2, este valor se acerca a 4."
+        let side = xValue < ModuleThreeExample.targetX ? "left" : "right"
+        return "You are approaching from the \(side): f(x) = \(ModuleThreeExample.format(ModuleThreeExample.nearbyValue(at: xValue))). As x approaches 2, this value approaches 4."
     }
 
     private func setX(_ newValue: Double) {

@@ -17,15 +17,15 @@ struct ModuleSixHeader: View {
                     .overlay(Circle().stroke(Color.white.opacity(0.12), lineWidth: 1))
             }
             .buttonStyle(.plain)
-            .help("Volver a la portada")
+            .help("Back to cover")
 
             VStack(alignment: .leading, spacing: 3) {
-                Text("MÓDULO 6")
+                Text("MODULE 6")
                     .font(.system(size: 10, weight: .bold, design: .rounded))
                     .tracking(2)
                     .foregroundStyle(AppTheme.softGold)
 
-                Text("Continuidad")
+                Text("Continuity")
                     .font(.system(size: 18, weight: .bold, design: .rounded))
                     .foregroundStyle(AppTheme.warmWhite)
             }
@@ -61,7 +61,7 @@ struct ModuleSixNavigation: View {
     var body: some View {
         HStack {
             Button(action: onPrevious) {
-                Label(currentPage == 0 ? "Módulo 5" : "Anterior", systemImage: "arrow.left")
+                Label(currentPage == 0 ? "Module 5" : "Previous", systemImage: "arrow.left")
                     .font(.system(size: 14, weight: .semibold, design: .rounded))
                     .foregroundStyle(AppTheme.warmWhite)
                     .padding(.horizontal, 18)
@@ -75,7 +75,7 @@ struct ModuleSixNavigation: View {
 
             Button(action: onNext) {
                 HStack(spacing: 12) {
-                    Text(currentPage == pageCount - 1 ? "Terminar módulo" : "Siguiente")
+                    Text(currentPage == pageCount - 1 ? "Finish Module" : "Next")
                     Image(systemName: currentPage == pageCount - 1 ? "checkmark" : "arrow.right")
                 }
                 .font(.system(size: 14, weight: .bold, design: .rounded))
@@ -109,24 +109,24 @@ struct ContinuityConditionList: View {
 
     var body: some View {
         VStack(spacing: 8) {
-            ContinuityConditionRow(number: 1, text: "f(2) existe", detail: functionDetail, isSatisfied: results[0])
-            ContinuityConditionRow(number: 2, text: "limₓ→₂ f(x) existe", detail: limitDetail, isSatisfied: results[1])
+            ContinuityConditionRow(number: 1, text: "f(2) exists", detail: functionDetail, isSatisfied: results[0])
+            ContinuityConditionRow(number: 2, text: "limₓ→₂ f(x) exists", detail: limitDetail, isSatisfied: results[1])
             ContinuityConditionRow(number: 3, text: "limₓ→₂ f(x) = f(2)", detail: equalityDetail, isSatisfied: results[2])
         }
     }
 
     private var functionDetail: String {
-        guard let value = ModuleSixExample.functionAtTarget(for: continuityCase) else { return "No está definida" }
+        guard let value = ModuleSixExample.functionAtTarget(for: continuityCase) else { return "Not defined" }
         return "f(2) = \(Int(value))"
     }
 
     private var limitDetail: String {
-        guard let value = ModuleSixExample.bilateralLimit(for: continuityCase) else { return "Los laterales difieren" }
+        guard let value = ModuleSixExample.bilateralLimit(for: continuityCase) else { return "One-sided limits differ" }
         return "L = \(Int(value))"
     }
 
     private var equalityDetail: String {
-        results[2] ? "Los dos valores coinciden" : "La igualdad no se cumple"
+        results[2] ? "Both values match" : "The equality does not hold"
     }
 }
 

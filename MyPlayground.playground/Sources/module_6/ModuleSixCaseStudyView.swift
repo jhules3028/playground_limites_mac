@@ -56,7 +56,7 @@ struct ModuleSixCaseStudyView: View {
                 .fixedSize(horizontal: false, vertical: true)
 
             VStack(alignment: .leading, spacing: 6) {
-                Text("FUNCIÓN DEL CASO")
+                Text("FUNCTION FOR THIS CASE")
                     .font(.system(size: 9.5, weight: .bold, design: .rounded))
                     .tracking(1.2)
                     .foregroundStyle(accentColor)
@@ -96,7 +96,7 @@ struct ModuleSixCaseStudyView: View {
         VStack(alignment: .leading, spacing: 11) {
             HStack(alignment: .bottom) {
                 VStack(alignment: .leading, spacing: 4) {
-                    LessonEyebrow(text: "Explora alrededor de a = 2")
+                    LessonEyebrow(text: "Explore Around a = 2")
                     Text(graphTitle)
                         .font(.system(size: 22, weight: .bold, design: .rounded))
                         .foregroundStyle(AppTheme.warmWhite)
@@ -120,7 +120,7 @@ struct ModuleSixCaseStudyView: View {
             HStack(spacing: 9) {
                 ContinuityMetricCard(label: "x", value: ModuleSixExample.format(xValue), color: AppTheme.lightBlue)
                 ContinuityMetricCard(label: "f(x)", value: displayedFunctionValue, color: accentColor)
-                ContinuityMetricCard(label: "límite", value: displayedLimit, color: limitColor)
+                ContinuityMetricCard(label: "limit", value: displayedLimit, color: limitColor)
                 ContinuityMetricCard(label: "f(2)", value: displayedTargetValue, color: accentColor)
             }
 
@@ -128,9 +128,9 @@ struct ModuleSixCaseStudyView: View {
                 .tint(accentColor)
 
             HStack(spacing: 8) {
-                ContinuityPreset(title: "Izquierda", value: "1.90") { setX(1.9) }
-                ContinuityPreset(title: "En a", value: "2.00") { setX(2) }
-                ContinuityPreset(title: "Derecha", value: "2.10") { setX(2.1) }
+                ContinuityPreset(title: "Left", value: "1.90") { setX(1.9) }
+                ContinuityPreset(title: "At a", value: "2.00") { setX(2) }
+                ContinuityPreset(title: "Right", value: "2.10") { setX(2.1) }
             }
 
             Text(dynamicObservation)
@@ -153,53 +153,53 @@ struct ModuleSixCaseStudyView: View {
     private var pageEyebrow: String {
         switch continuityCase {
         case .continuous:
-            return "Pantalla 2 · Caso continuo"
+            return "Screen 2 · Continuous Case"
         case .removable:
-            return "Pantalla 3 · Hueco"
+            return "Screen 3 · Hole"
         case .jump:
-            return "Pantalla 4 · Salto"
+            return "Screen 4 · Jump"
         }
     }
 
     private var graphTitle: String {
         switch continuityCase {
         case .continuous:
-            return "La curva y el punto coinciden"
+            return "The Curve and Point Match"
         case .removable:
-            return "El límite no depende del punto aislado"
+            return "The Limit Does Not Depend on the Isolated Point"
         case .jump:
-            return "Los límites laterales se separan"
+            return "The One-Sided Limits Separate"
         }
     }
 
     private var conclusionText: String {
         switch continuityCase {
         case .continuous:
-            return "Se cumplen las tres condiciones. La función es continua en x = 2."
+            return "All three conditions hold. The function is continuous at x = 2."
         case .removable:
-            return "Cambiar únicamente f(2) de 0 a 4 repararía la función; por eso la discontinuidad es removible."
+            return "Changing only f(2) from 0 to 4 would repair the function; therefore, the discontinuity is removable."
         case .jump:
-            return "Aunque f(2) existe, cambiar un solo punto no puede unir dos límites laterales diferentes."
+            return "Although f(2) exists, changing one point cannot join two different one-sided limits."
         }
     }
 
     private var displayedFunctionValue: String {
         guard let value = ModuleSixExample.value(at: xValue, continuityCase: continuityCase) else {
-            return "no definida"
+            return "not defined"
         }
         return ModuleSixExample.format(value)
     }
 
     private var displayedTargetValue: String {
         guard let value = ModuleSixExample.functionAtTarget(for: continuityCase) else {
-            return "no existe"
+            return "does not exist"
         }
         return ModuleSixExample.format(value)
     }
 
     private var displayedLimit: String {
         guard let value = ModuleSixExample.bilateralLimit(for: continuityCase) else {
-            return "no existe"
+            return "does not exist"
         }
         return ModuleSixExample.format(value)
     }
@@ -212,16 +212,16 @@ struct ModuleSixCaseStudyView: View {
         if abs(xValue - 2) < 0.005 {
             switch continuityCase {
             case .continuous:
-                return "En x = 2, f(2) = 4 y el límite también vale 4: la gráfica atraviesa el punto sin interrupción."
+                return "At x = 2, f(2) = 4 and the limit also equals 4: the graph passes through the point without interruption."
             case .removable:
-                return "En x = 2, f(2) = 0 mientras el límite vale 4. La función está definida, pero no coincide con su límite."
+                return "At x = 2, f(2) = 0 while the limit equals 4. The function is defined, but it does not equal its limit."
             case .jump:
-                return "En x = 2, f(2) = 5. Sin embargo, el lado izquierdo se acerca a 3 y el derecho a 5."
+                return "At x = 2, f(2) = 5. However, the left side approaches 3 and the right side approaches 5."
             }
         }
 
-        let side = xValue < 2 ? "izquierda" : "derecha"
-        return "Te encuentras a la \(side) de a. En x = \(ModuleSixExample.format(xValue)), f(x) = \(displayedFunctionValue)."
+        let side = xValue < 2 ? "left" : "right"
+        return "You are to the \(side) of a. At x = \(ModuleSixExample.format(xValue)), f(x) = \(displayedFunctionValue)."
     }
 
     private func setX(_ value: Double) {

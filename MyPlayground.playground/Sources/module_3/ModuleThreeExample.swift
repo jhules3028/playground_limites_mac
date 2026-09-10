@@ -12,7 +12,7 @@ enum FunctionAtTargetCase: String, CaseIterable, Identifiable {
         case .continuous:
             return "f(a) = L"
         case .undefined:
-            return "f(a) no existe"
+            return "f(a) does not exist"
         case .different:
             return "f(a) ≠ L"
         }
@@ -21,22 +21,22 @@ enum FunctionAtTargetCase: String, CaseIterable, Identifiable {
     var shortTitle: String {
         switch self {
         case .continuous:
-            return "Coincide"
+            return "Matches"
         case .undefined:
-            return "Sin definir"
+            return "Undefined"
         case .different:
-            return "Es diferente"
+            return "Different"
         }
     }
 
     var explanation: String {
         switch self {
         case .continuous:
-            return "La función toma en a el mismo valor al que se aproxima."
+            return "At a, the function takes the same value it approaches."
         case .undefined:
-            return "Hay un hueco en a, pero la curva se aproxima al mismo valor por ambos lados."
+            return "There is a hole at a, but the curve approaches the same value from both sides."
         case .different:
-            return "La función tiene un punto separado en a; ese valor no cambia la tendencia cercana."
+            return "The function has a separate point at a; that value does not change the nearby trend."
         }
     }
 }

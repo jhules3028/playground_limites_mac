@@ -31,13 +31,13 @@ struct ModuleFourExistenceView: View {
 
     private var rulePanel: some View {
         VStack(alignment: .leading, spacing: 15) {
-            LessonEyebrow(text: "Pantalla 4 · Comparar")
+            LessonEyebrow(text: "Screen 4 · Compare")
 
-            Text("¿Cuándo existe el límite?")
+            Text("When Does the Limit Exist?")
                 .font(.system(size: 29, weight: .heavy, design: .rounded))
                 .foregroundStyle(AppTheme.warmWhite)
 
-            Text("El límite bilateral existe solamente cuando las aproximaciones por izquierda y derecha llegan al mismo valor.")
+            Text("The two-sided limit exists only when the approaches from the left and right reach the same value.")
                 .font(.system(size: 13.5, design: .rounded))
                 .foregroundStyle(AppTheme.mutedText)
                 .lineSpacing(4)
@@ -45,7 +45,7 @@ struct ModuleFourExistenceView: View {
 
             ModuleCard {
                 VStack(spacing: 11) {
-                    Text("CONDICIÓN DE EXISTENCIA")
+                    Text("CONDITION FOR EXISTENCE")
                         .font(.system(size: 9.5, weight: .bold, design: .rounded))
                         .tracking(1.3)
                         .foregroundStyle(AppTheme.softGold)
@@ -60,7 +60,7 @@ struct ModuleFourExistenceView: View {
                         .fill(Color.white.opacity(0.11))
                         .frame(height: 1)
 
-                    Text("Si son diferentes, limₓ→ₐ f(x) no existe.")
+                    Text("If they differ, limₓ→ₐ f(x) does not exist.")
                         .font(.system(size: 12, weight: .semibold, design: .rounded))
                         .foregroundStyle(AppTheme.mutedText)
                         .multilineTextAlignment(.center)
@@ -79,8 +79,8 @@ struct ModuleFourExistenceView: View {
         VStack(alignment: .leading, spacing: 13) {
             HStack(alignment: .bottom) {
                 VStack(alignment: .leading, spacing: 4) {
-                    LessonEyebrow(text: "Compara ambos casos")
-                    Text(comparison == .matching ? "Los dos lados apuntan a 4" : "Aparece un salto entre 3 y 5")
+                    LessonEyebrow(text: "Compare Both Cases")
+                    Text(comparison == .matching ? "Both Sides Point to 4" : "A Jump Appears Between 3 and 5")
                         .font(.system(size: 22, weight: .bold, design: .rounded))
                         .foregroundStyle(AppTheme.warmWhite)
                 }
@@ -92,7 +92,7 @@ struct ModuleFourExistenceView: View {
 
             HStack(spacing: 10) {
                 LateralMetricCard(
-                    label: "límite izquierdo",
+                    label: "left-hand limit",
                     value: "L⁻ = \(Int(leftLimit))",
                     color: AppTheme.lightBlue
                 )
@@ -100,7 +100,7 @@ struct ModuleFourExistenceView: View {
                     .font(.system(size: 19, weight: .bold))
                     .foregroundStyle(comparison == .matching ? AppTheme.success : AppTheme.error)
                 LateralMetricCard(
-                    label: "límite derecho",
+                    label: "right-hand limit",
                     value: "L⁺ = \(Int(rightLimit))",
                     color: AppTheme.softGold
                 )
@@ -125,7 +125,7 @@ struct ModuleFourExistenceView: View {
                 .foregroundStyle(comparison == .matching ? AppTheme.success : AppTheme.error)
 
             VStack(alignment: .leading, spacing: 3) {
-                Text(comparison == .matching ? "El límite existe" : "El límite no existe")
+                Text(comparison == .matching ? "The Limit Exists" : "The Limit Does Not Exist")
                     .font(.system(size: 13, weight: .bold, design: .rounded))
                     .foregroundStyle(AppTheme.warmWhite)
 
@@ -151,9 +151,9 @@ struct ModuleFourExistenceView: View {
     private var comparisonExplanation: String {
         switch comparison {
         case .matching:
-            return "Como L⁻ = 4 y L⁺ = 4, las dos direcciones coinciden. El límite bilateral existe y vale 4."
+            return "Because L⁻ = 4 and L⁺ = 4, both directions agree. The two-sided limit exists and equals 4."
         case .jump:
-            return "Como L⁻ = 3 y L⁺ = 5, cada dirección apunta a un valor distinto. El límite bilateral no existe."
+            return "Because L⁻ = 3 and L⁺ = 5, each direction points to a different value. The two-sided limit does not exist."
         }
     }
 }
