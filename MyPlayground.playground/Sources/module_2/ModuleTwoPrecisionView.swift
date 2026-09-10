@@ -94,6 +94,21 @@ struct ModuleTwoPrecisionView: View {
     private var resultsPanel: some View {
         ModuleCard {
             VStack(spacing: 15) {
+                HStack(spacing: 10) {
+                    Text("FUNCIÓN ANALIZADA")
+                        .font(.system(size: 9.5, weight: .bold, design: .rounded))
+                        .tracking(1.3)
+                        .foregroundStyle(AppTheme.softGold)
+
+                    Spacer()
+
+                    Text("f(x) = (x² − 4) / (x − 2),  x ≠ 2")
+                        .font(.system(size: 16, weight: .semibold, design: .serif))
+                        .foregroundStyle(AppTheme.warmWhite)
+                        .minimumScaleFactor(0.75)
+                        .lineLimit(1)
+                }
+
                 HStack(spacing: 12) {
                     ApproachValueCard(
                         direction: "IZQUIERDA",

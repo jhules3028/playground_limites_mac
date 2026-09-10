@@ -47,6 +47,8 @@ enum ModuleThreeExample {
     static let differentFunctionValue = 6.0
     static let minimumX = -0.8
     static let maximumX = 4.8
+    static let nearbyFunctionNotation = "f(x) = x + 2,  x ≠ 2"
+    static let limitNotation = "limₓ→₂ (x + 2) = 4"
 
     static func nearbyValue(at x: Double) -> Double {
         x + 2

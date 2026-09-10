@@ -159,9 +159,9 @@ private struct TrendColumn: View {
                 .foregroundStyle(color)
 
             Text(values.joined(separator: "  ·  "))
-                .font(.system(size: 10.5, weight: .semibold, design: .monospaced))
+                .font(.system(size: 14, weight: .bold, design: .monospaced))
                 .foregroundStyle(AppTheme.warmWhite)
-                .minimumScaleFactor(0.7)
+                .minimumScaleFactor(0.8)
                 .lineLimit(1)
         }
         .frame(maxWidth: .infinity)

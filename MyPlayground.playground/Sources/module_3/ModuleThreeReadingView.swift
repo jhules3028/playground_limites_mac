@@ -41,6 +41,15 @@ struct ModuleThreeReadingView: View {
                 .lineSpacing(4)
                 .fixedSize(horizontal: false, vertical: true)
 
+            Text(ModuleThreeExample.nearbyFunctionNotation)
+                .font(.system(size: 18, weight: .semibold, design: .serif))
+                .foregroundStyle(AppTheme.softGold)
+                .padding(.horizontal, 14)
+                .padding(.vertical, 9)
+                .frame(maxWidth: .infinity)
+                .background(AppTheme.gold.opacity(0.09))
+                .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+
             ModuleCard {
                 VStack(alignment: .leading, spacing: 11) {
                     GraphElementRow(icon: "arrow.left.and.right", text: "Los ejes ubican los valores de x y de y.")
@@ -51,7 +60,7 @@ struct ModuleThreeReadingView: View {
             }
 
             HStack(spacing: 10) {
-                ExpressionBadge(expression: "limₓ→₂ f(x) = 4", caption: "comportamiento cercano")
+                ExpressionBadge(expression: ModuleThreeExample.limitNotation, caption: "comportamiento cercano")
                 ExpressionBadge(expression: "f(2)", caption: "valor exacto")
             }
         }

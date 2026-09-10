@@ -70,6 +70,10 @@ struct ModuleThreeExploreView: View {
                     Text("Mueve x hacia a = 2")
                         .font(.system(size: 22, weight: .bold, design: .rounded))
                         .foregroundStyle(AppTheme.warmWhite)
+
+                    Text(ModuleThreeExample.nearbyFunctionNotation)
+                        .font(.system(size: 12.5, weight: .semibold, design: .serif))
+                        .foregroundStyle(AppTheme.softGold)
                 }
 
                 Spacer()
