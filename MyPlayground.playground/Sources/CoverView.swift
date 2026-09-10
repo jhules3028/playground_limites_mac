@@ -57,7 +57,7 @@ struct CoverView: View {
                 .frame(width: 1, height: 38)
 
             VStack(alignment: .leading, spacing: 4) {
-                Text("NATIONAL AUTONOMOUS UNIVERSITY OF MEXICO")
+                Text("UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO")
                     .font(.system(size: 10, weight: .bold, design: .rounded))
                     .tracking(1.25)
                     .foregroundStyle(AppTheme.mutedText)
@@ -88,22 +88,12 @@ struct CoverView: View {
                 .tracking(2.5)
                 .foregroundStyle(AppTheme.softGold)
 
-            VStack(alignment: .leading, spacing: 4) {
-                Text("Explore")
-                    .foregroundStyle(AppTheme.warmWhite)
-
-                HStack(alignment: .firstTextBaseline, spacing: 12) {
-                    Text("limits")
-                        .foregroundStyle(AppTheme.warmWhite)
-
-                    Rectangle()
-                        .fill(AppTheme.gold)
-                        .frame(width: 58, height: 5)
-                        .offset(y: -4)
-                }
-            }
-            .font(.system(size: 56, weight: .heavy, design: .rounded))
-            .minimumScaleFactor(0.75)
+            Text("Explore the limits")
+                .font(.system(size: 56, weight: .heavy, design: .rounded))
+                .foregroundStyle(AppTheme.warmWhite)
+                .lineLimit(1)
+                .minimumScaleFactor(0.7)
+                .frame(maxWidth: .infinity, alignment: .leading)
 
             Text("Discover how a function behaves as it approaches a point through visual, numerical, and algebraic experiences.")
                 .font(.system(size: 17, weight: .regular, design: .rounded))
