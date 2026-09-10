@@ -147,7 +147,7 @@ Pantalla 2: mover x y comparar los tres casos
    ↓ Siguiente
 Pantalla 3: diferenciar y responder
    ↓ Terminar módulo
-Módulo 4 provisional
+Módulo 4: límites laterales
 ```
 
 ## Validaciones realizadas
@@ -161,4 +161,4 @@ Módulo 4 provisional
 
 ## Estado
 
-El módulo 3 está implementado en español. El módulo 4 permanece como pantalla provisional hasta la siguiente etapa.
+El módulo 3 está implementado en español y conectado con el módulo 4.

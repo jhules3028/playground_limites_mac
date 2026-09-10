@@ -106,6 +106,14 @@ playground/
 │   │   │   ├── ModuleThreeGraph.swift
 │   │   │   └── ModuleThreeExample.swift
 │   │   ├── module_4/
+│   │   │   ├── ModuleFourView.swift
+│   │   │   ├── ModuleFourIntroductionView.swift
+│   │   │   ├── ModuleFourSidePlayground.swift
+│   │   │   ├── ModuleFourExistenceView.swift
+│   │   │   ├── ModuleFourPracticeView.swift
+│   │   │   ├── ModuleFourComponents.swift
+│   │   │   ├── ModuleFourGraph.swift
+│   │   │   └── ModuleFourExample.swift
 │   │   ├── module_5/
 │   │   ├── module_6/
 │   │   └── module_7/
