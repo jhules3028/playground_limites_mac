@@ -73,12 +73,6 @@ struct ModuleSixNavigation: View {
 
             Spacer()
 
-            Text(pageTitle)
-                .font(.system(size: 11, weight: .medium, design: .rounded))
-                .foregroundStyle(AppTheme.mutedText)
-
-            Spacer()
-
             Button(action: onNext) {
                 HStack(spacing: 12) {
                     Text(currentPage == pageCount - 1 ? "Terminar módulo" : "Siguiente")
@@ -104,20 +98,6 @@ struct ModuleSixNavigation: View {
         .padding(.bottom, 30)
     }
 
-    private var pageTitle: String {
-        switch currentPage {
-        case 0:
-            return "TRES CONDICIONES"
-        case 1:
-            return "CASO CONTINUO"
-        case 2:
-            return "HUECO REMOVIBLE"
-        case 3:
-            return "SALTO"
-        default:
-            return "IDENTIFICAR"
-        }
-    }
 }
 
 struct ContinuityConditionList: View {

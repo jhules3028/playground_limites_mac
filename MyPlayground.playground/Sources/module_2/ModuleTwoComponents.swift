@@ -73,12 +73,6 @@ struct ModuleTwoNavigation: View {
 
             Spacer()
 
-            Text(pageTitle)
-                .font(.system(size: 11, weight: .medium, design: .rounded))
-                .foregroundStyle(AppTheme.mutedText)
-
-            Spacer()
-
             Button(action: onNext) {
                 HStack(spacing: 12) {
                     Text(currentPage == pageCount - 1 ? "Terminar módulo" : "Siguiente")
@@ -104,16 +98,6 @@ struct ModuleTwoNavigation: View {
         .padding(.bottom, 32)
     }
 
-    private var pageTitle: String {
-        switch currentPage {
-        case 0:
-            return "LEER LA TABLA"
-        case 1:
-            return "CAMBIAR PRECISIÓN"
-        default:
-            return "INTERPRETAR"
-        }
-    }
 }
 
 struct NumericalLimitTable: View {

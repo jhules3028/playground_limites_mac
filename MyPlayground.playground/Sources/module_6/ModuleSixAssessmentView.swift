@@ -70,7 +70,7 @@ struct ModuleSixAssessmentView: View {
             VStack(alignment: .leading, spacing: 9) {
                 AssessmentLabel(number: 1, color: AppTheme.lightBlue)
 
-                Text("La curva se aproxima a 4 por ambos lados, pero f(2) no existe. ¿Qué caso es?")
+                Text("La curva se aproxima a 4 por ambos lados, pero f(2) = 0. ¿Qué caso es?")
                     .font(.system(size: 14.5, weight: .bold, design: .rounded))
                     .foregroundStyle(AppTheme.warmWhite)
                     .fixedSize(horizontal: false, vertical: true)
@@ -87,8 +87,8 @@ struct ModuleSixAssessmentView: View {
                 if let firstAnswer {
                     ContinuityFeedback(
                         isCorrect: firstAnswer == 1,
-                        correctText: "Correcto. El límite existe, pero falta el valor exacto. Definir f(2) = 4 eliminaría el hueco.",
-                        incorrectText: "Los dos lados sí coinciden. La falla es el hueco en f(2), por eso la discontinuidad es removible."
+                        correctText: "Correcto. El límite vale 4, pero f(2) = 0. Cambiar sólo f(2) a 4 repararía la función.",
+                        incorrectText: "Los dos lados sí coinciden en 4. La falla es que f(2) vale 0, por eso la discontinuidad es removible."
                     )
                 }
             }

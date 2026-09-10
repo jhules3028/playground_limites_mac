@@ -74,12 +74,6 @@ struct ModuleOneNavigation: View {
 
             Spacer()
 
-            Text(pageTitle)
-                .font(.system(size: 11, weight: .medium, design: .rounded))
-                .foregroundStyle(AppTheme.mutedText)
-
-            Spacer()
-
             Button(action: onNext) {
                 HStack(spacing: 12) {
                     Text(currentPage == pageCount - 1 ? "Terminar módulo" : "Siguiente")
@@ -105,16 +99,6 @@ struct ModuleOneNavigation: View {
         .padding(.bottom, 32)
     }
 
-    private var pageTitle: String {
-        switch currentPage {
-        case 0:
-            return "CONCEPTO"
-        case 1:
-            return "EXPLORACIÓN"
-        default:
-            return "IDEA CLAVE"
-        }
-    }
 }
 
 struct ConceptTile: View {

@@ -34,7 +34,7 @@ struct ModuleSixGraph: View {
     private func graphPoint(x: Double, y: Double, in size: CGSize) -> CGPoint {
         let xMin = -0.2
         let xMax = 4.2
-        let yMin = 0.0
+        let yMin = continuityCase == .removable ? -0.6 : 0.0
         let yMax = 7.0
         let mappedX = (x - xMin) / (xMax - xMin) * size.width
         let mappedY = size.height - ((y - yMin) / (yMax - yMin) * size.height)
@@ -171,6 +171,12 @@ struct ModuleSixGraph: View {
         case .removable:
             HollowContinuityMarker(color: AppTheme.softGold)
                 .position(graphPoint(x: 2, y: 4, in: size))
+
+            Circle()
+                .fill(AppTheme.error)
+                .frame(width: 15, height: 15)
+                .shadow(color: AppTheme.error.opacity(0.55), radius: 7)
+                .position(graphPoint(x: 2, y: 0, in: size))
 
         case .jump:
             HollowContinuityMarker(color: AppTheme.lightBlue)

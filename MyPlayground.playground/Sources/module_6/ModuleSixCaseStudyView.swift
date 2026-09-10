@@ -166,7 +166,7 @@ struct ModuleSixCaseStudyView: View {
         case .continuous:
             return "La curva y el punto coinciden"
         case .removable:
-            return "El límite sobrevive al hueco"
+            return "El límite no depende del punto aislado"
         case .jump:
             return "Los límites laterales se separan"
         }
@@ -177,7 +177,7 @@ struct ModuleSixCaseStudyView: View {
         case .continuous:
             return "Se cumplen las tres condiciones. La función es continua en x = 2."
         case .removable:
-            return "Definir f(2) = 4 repararía el hueco; por eso la discontinuidad se llama removible."
+            return "Cambiar únicamente f(2) de 0 a 4 repararía la función; por eso la discontinuidad es removible."
         case .jump:
             return "Aunque f(2) existe, cambiar un solo punto no puede unir dos límites laterales diferentes."
         }
@@ -214,7 +214,7 @@ struct ModuleSixCaseStudyView: View {
             case .continuous:
                 return "En x = 2, f(2) = 4 y el límite también vale 4: la gráfica atraviesa el punto sin interrupción."
             case .removable:
-                return "En x = 2 no hay valor de la función. El límite vale 4, pero la primera condición de continuidad falla."
+                return "En x = 2, f(2) = 0 mientras el límite vale 4. La función está definida, pero no coincide con su límite."
             case .jump:
                 return "En x = 2, f(2) = 5. Sin embargo, el lado izquierdo se acerca a 3 y el derecho a 5."
             }

@@ -73,12 +73,6 @@ struct ModuleFourNavigation: View {
 
             Spacer()
 
-            Text(pageTitle)
-                .font(.system(size: 11, weight: .medium, design: .rounded))
-                .foregroundStyle(AppTheme.mutedText)
-
-            Spacer()
-
             Button(action: onNext) {
                 HStack(spacing: 12) {
                     Text(currentPage == pageCount - 1 ? "Terminar módulo" : "Siguiente")
@@ -104,20 +98,6 @@ struct ModuleFourNavigation: View {
         .padding(.bottom, 30)
     }
 
-    private var pageTitle: String {
-        switch currentPage {
-        case 0:
-            return "DOS DIRECCIONES"
-        case 1:
-            return "DESDE LA IZQUIERDA"
-        case 2:
-            return "DESDE LA DERECHA"
-        case 3:
-            return "CONDICIÓN DE EXISTENCIA"
-        default:
-            return "COMPROBAR"
-        }
-    }
 }
 
 struct LateralDefinitionCard: View {

@@ -73,12 +73,6 @@ struct ModuleFiveNavigation: View {
 
             Spacer()
 
-            Text(pageTitle)
-                .font(.system(size: 11, weight: .medium, design: .rounded))
-                .foregroundStyle(AppTheme.mutedText)
-
-            Spacer()
-
             Button(action: onNext) {
                 HStack(spacing: 12) {
                     Text(currentPage == pageCount - 1 ? "Terminar módulo" : "Siguiente")
@@ -104,20 +98,6 @@ struct ModuleFiveNavigation: View {
         .padding(.bottom, 30)
     }
 
-    private var pageTitle: String {
-        switch currentPage {
-        case 0:
-            return "SUSTITUCIÓN DIRECTA"
-        case 1:
-            return "FORMA 0/0"
-        case 2:
-            return "FACTORIZACIÓN"
-        case 3:
-            return "RACIONALIZACIÓN"
-        default:
-            return "EVALUACIÓN"
-        }
-    }
 }
 
 struct AlgebraFormulaCard: View {

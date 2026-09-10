@@ -34,7 +34,7 @@ enum ContinuityCase: String, CaseIterable, Identifiable {
         case .continuous:
             return "La curva llega al mismo punto desde ambos lados y la función toma exactamente ese valor."
         case .removable:
-            return "La curva se aproxima al mismo valor, pero falta el punto exacto. El límite existe aunque la función no sea continua."
+            return "La curva se aproxima a 4, pero el punto exacto está definido en 0. El límite existe aunque la función no sea continua."
         case .jump:
             return "Cada lado se aproxima a una altura diferente. Por eso el límite bilateral no existe."
         }
@@ -45,7 +45,7 @@ enum ContinuityCase: String, CaseIterable, Identifiable {
         case .continuous:
             return "f(x) = x + 2"
         case .removable:
-            return "f(x) = x + 2,  x ≠ 2"
+            return "f(x) = ⎧ x + 2,  si x ≠ 2\n       ⎩ 0,      si x = 2"
         case .jump:
             return "f(x) = x + 1 si x < 2;  x + 3 si x ≥ 2"
         }
@@ -73,7 +73,7 @@ enum ModuleSixExample {
         case .continuous:
             return 4
         case .removable:
-            return nil
+            return 0
         case .jump:
             return 5
         }
