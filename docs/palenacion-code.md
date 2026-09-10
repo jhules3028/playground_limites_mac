@@ -91,6 +91,12 @@ playground/
 │   │   │   ├── ModuleOneComponents.swift
 │   │   │   └── ModuleOneExample.swift
 │   │   ├── module_2/
+│   │   │   ├── ModuleTwoView.swift
+│   │   │   ├── ModuleTwoTableView.swift
+│   │   │   ├── ModuleTwoPrecisionView.swift
+│   │   │   ├── ModuleTwoSummaryView.swift
+│   │   │   ├── ModuleTwoComponents.swift
+│   │   │   └── ModuleTwoExample.swift
 │   │   ├── module_3/
 │   │   ├── module_4/
 │   │   ├── module_5/

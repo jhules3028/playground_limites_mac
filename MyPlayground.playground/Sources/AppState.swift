@@ -20,6 +20,11 @@ final class AppState: ObservableObject {
         go(to: .numericalLimit)
     }
 
+    func completeModuleTwo() {
+        completedSections.insert(.numericalLimit)
+        go(to: .graphicalLimit)
+    }
+
     func go(to section: AppSection) {
         currentSection = section
         visitedSections.insert(section)

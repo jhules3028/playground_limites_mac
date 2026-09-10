@@ -79,7 +79,7 @@ Incluye:
 - Administra la pantalla interna seleccionada.
 - Conecta los controles “Anterior” y “Siguiente”.
 - Permite regresar a la portada.
-- Al terminar, marca el módulo como completado y continúa hacia el módulo 2 provisional.
+- Al terminar, marca el módulo como completado y continúa hacia el módulo 2.
 
 ### `ModuleOneComponents.swift`
 
@@ -87,10 +87,10 @@ Contiene elementos reutilizados dentro del módulo:
 
 - Encabezado y progreso de tres pantallas.
 - Navegación inferior.
-- Tarjetas de contenido.
-- Etiquetas de sección.
 - Tarjetas de conceptos.
 - Representación visual de la analogía.
+
+Las tarjetas generales y las etiquetas de sección se encuentran ahora en `Sources/LessonComponents.swift` para poder compartirlas con otros módulos.
 
 ### `ModuleOneExample.swift`
 
@@ -121,7 +121,7 @@ Pantalla 2: deslizador y gráfica
    ↓ Siguiente
 Pantalla 3: resumen y comprobación
    ↓ Terminar módulo
-Módulo 2 provisional
+Módulo 2: límites mediante tablas
 ```
 
 ## Estado

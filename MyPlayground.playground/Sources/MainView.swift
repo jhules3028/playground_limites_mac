@@ -36,6 +36,26 @@ struct MainView: View {
                 )
                 .transition(.opacity.combined(with: .move(edge: .trailing)))
 
+            case .numericalLimit:
+                ModuleTwoView(
+                    onExit: {
+                        withAnimation(.easeInOut(duration: 0.35)) {
+                            appState.goToCover()
+                        }
+                    },
+                    onPreviousModule: {
+                        withAnimation(.easeInOut(duration: 0.35)) {
+                            appState.go(to: .intuitiveLimit)
+                        }
+                    },
+                    onComplete: {
+                        withAnimation(.easeInOut(duration: 0.35)) {
+                            appState.completeModuleTwo()
+                        }
+                    }
+                )
+                .transition(.opacity.combined(with: .move(edge: .trailing)))
+
             default:
                 ModulePlaceholderView(
                     section: appState.currentSection,
