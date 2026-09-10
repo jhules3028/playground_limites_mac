@@ -167,7 +167,7 @@ Discontinuidad de salto
    ↓
 Actividad de identificación
    ↓
-Evaluación final provisional
+Evaluación final
 ```
 
 ## Validaciones realizadas
@@ -181,4 +181,4 @@ Evaluación final provisional
 
 ## Estado
 
-El módulo 6 está implementado en español. La evaluación final permanece como pantalla provisional.
+El módulo 6 está implementado en español y conectado con la evaluación final.

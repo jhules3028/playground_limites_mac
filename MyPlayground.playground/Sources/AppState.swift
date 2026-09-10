@@ -45,6 +45,33 @@ final class AppState: ObservableObject {
         go(to: .assessment)
     }
 
+    func completeAssessment() {
+        completedSections.insert(.assessment)
+    }
+
+    func goToModule(_ moduleNumber: Int) {
+        let section: AppSection
+
+        switch moduleNumber {
+        case 1:
+            section = .intuitiveLimit
+        case 2:
+            section = .numericalLimit
+        case 3:
+            section = .graphicalLimit
+        case 4:
+            section = .oneSidedLimits
+        case 5:
+            section = .algebraicLimit
+        case 6:
+            section = .continuity
+        default:
+            return
+        }
+
+        go(to: section)
+    }
+
     func go(to section: AppSection) {
         currentSection = section
         visitedSections.insert(section)

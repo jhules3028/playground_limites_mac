@@ -131,7 +131,13 @@ playground/
 │   │   │   ├── ModuleSixComponents.swift
 │   │   │   ├── ModuleSixGraph.swift
 │   │   │   └── ModuleSixExample.swift
-│   │   └── module_7/
+│   │   └── evaluation/
+│   │       ├── EvaluationView.swift
+│   │       ├── EvaluationQuestionView.swift
+│   │       ├── EvaluationResultsView.swift
+│   │       ├── EvaluationComponents.swift
+│   │       ├── EvaluationModels.swift
+│   │       └── EvaluationQuestionBank.swift
 │   ├── Resources/
 │   │   └── fes-acatlan-logo.png
 │   └── playground.xcworkspace/
@@ -478,11 +484,11 @@ El estudiante observará la gráfica y clasificará el caso.
 
 Después recibirá retroalimentación inmediata.
 
-### `AssessmentView.swift`
+### Carpeta `evaluation/`
 
 Corresponderá al módulo 7.
 
-Contendrá entre 8 y 10 preguntas.
+Contiene un banco de 18 preguntas y genera 10 preguntas por intento.
 
 La evaluación incluirá ejercicios:
 
@@ -719,18 +725,20 @@ También clasificará diferentes discontinuidades.
 
 ### Etapa 9. Evaluación final
 
-Se desarrollará `AssessmentView.swift`.
+Se desarrollará la carpeta `evaluation/`, separando el banco de preguntas, los modelos, la pantalla del examen y los resultados.
 
 La evaluación cubrirá todos los módulos.
 
 Mostrará:
 
-* Calificación.
+* Diez preguntas aleatorias sin repetir.
+* Representación de los seis módulos en cada intento.
+* Calificación sobre diez y porcentaje.
 * Número de aciertos.
-* Explicación de errores.
+* Explicación general y retroalimentación específica de cada error.
 * Temas que deben repasarse.
 
-El estudiante podrá repetirla o volver a estudiar.
+El estudiante podrá cambiar respuestas antes de entregar, repetir con otra selección o volver a estudiar el módulo relacionado.
 
 ### Etapa 10. Revisión final
 
