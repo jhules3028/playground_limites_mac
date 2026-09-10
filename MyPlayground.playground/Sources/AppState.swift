@@ -25,6 +25,11 @@ final class AppState: ObservableObject {
         go(to: .graphicalLimit)
     }
 
+    func completeModuleThree() {
+        completedSections.insert(.graphicalLimit)
+        go(to: .oneSidedLimits)
+    }
+
     func go(to section: AppSection) {
         currentSection = section
         visitedSections.insert(section)

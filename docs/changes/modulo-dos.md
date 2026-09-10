@@ -82,7 +82,7 @@ Incluye:
 - Administra la pantalla interna seleccionada.
 - Permite volver al módulo 1 desde la primera pantalla.
 - Permite volver a la portada.
-- Al terminar, registra el módulo 2 como completado y continúa hacia el módulo 3 provisional.
+- Al terminar, registra el módulo 2 como completado y continúa hacia el módulo 3.
 
 ### `ModuleTwoComponents.swift`
 
@@ -140,7 +140,7 @@ Pantalla 2: cambiar la precisión
    ↓ Siguiente
 Pantalla 3: interpretar y responder
    ↓ Terminar módulo
-Módulo 3 provisional
+Módulo 3: interpretación gráfica
 ```
 
 ## Validaciones realizadas
@@ -153,4 +153,4 @@ Módulo 3 provisional
 
 ## Estado
 
-El módulo 2 está implementado en español. El módulo 3 continúa como pantalla provisional hasta la siguiente etapa.
+El módulo 2 está implementado en español y conectado con el módulo 3.

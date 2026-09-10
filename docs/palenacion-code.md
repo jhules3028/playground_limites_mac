@@ -98,6 +98,13 @@ playground/
 │   │   │   ├── ModuleTwoComponents.swift
 │   │   │   └── ModuleTwoExample.swift
 │   │   ├── module_3/
+│   │   │   ├── ModuleThreeView.swift
+│   │   │   ├── ModuleThreeReadingView.swift
+│   │   │   ├── ModuleThreeExploreView.swift
+│   │   │   ├── ModuleThreeSummaryView.swift
+│   │   │   ├── ModuleThreeComponents.swift
+│   │   │   ├── ModuleThreeGraph.swift
+│   │   │   └── ModuleThreeExample.swift
 │   │   ├── module_4/
 │   │   ├── module_5/
 │   │   ├── module_6/
