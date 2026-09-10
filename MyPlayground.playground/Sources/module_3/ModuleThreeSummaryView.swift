@@ -37,6 +37,27 @@ struct ModuleThreeSummaryView: View {
                 .font(.system(size: 29, weight: .heavy, design: .rounded))
                 .foregroundStyle(AppTheme.warmWhite)
 
+            HStack(spacing: 12) {
+                Text("FUNCIÓN DEL CASO")
+                    .font(.system(size: 9, weight: .bold, design: .rounded))
+                    .tracking(1.2)
+                    .foregroundStyle(AppTheme.lightBlue)
+
+                Text("f(x) =  x + 2, si x ≠ 2;   6, si x = 2")
+                    .font(.system(size: 15, weight: .semibold, design: .serif))
+                    .foregroundStyle(AppTheme.warmWhite)
+                    .minimumScaleFactor(0.72)
+                    .lineLimit(1)
+            }
+            .padding(.horizontal, 13)
+            .frame(maxWidth: .infinity, minHeight: 42, alignment: .leading)
+            .background(AppTheme.lightBlue.opacity(0.08))
+            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: 12, style: .continuous)
+                    .stroke(AppTheme.lightBlue.opacity(0.2), lineWidth: 1)
+            }
+
             HStack(spacing: 11) {
                 MeaningCard(
                     expression: "limₓ→₂ f(x) = 4",

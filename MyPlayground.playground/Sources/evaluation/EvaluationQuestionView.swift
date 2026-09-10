@@ -49,13 +49,6 @@ struct EvaluationQuestionView: View {
                         }
                     }
 
-                    HStack(spacing: 8) {
-                        Image(systemName: "eye.slash.fill")
-                            .foregroundStyle(AppTheme.lightBlue)
-                        Text("No se mostrará si acertaste hasta que entregues la evaluación.")
-                            .font(.system(size: 11, weight: .medium, design: .rounded))
-                            .foregroundStyle(AppTheme.mutedText)
-                    }
                 }
                 .frame(maxWidth: 1_080)
                 .padding(.horizontal, 48)
@@ -94,4 +87,3 @@ struct EvaluationQuestionView: View {
         return String(UnicodeScalar(65 + index)!)
     }
 }
-
