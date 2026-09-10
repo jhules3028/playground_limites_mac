@@ -21,6 +21,21 @@ struct MainView: View {
                 }
                 .transition(.opacity.combined(with: .scale(scale: 0.985)))
 
+            case .intuitiveLimit:
+                ModuleOneView(
+                    onExit: {
+                        withAnimation(.easeInOut(duration: 0.35)) {
+                            appState.goToCover()
+                        }
+                    },
+                    onComplete: {
+                        withAnimation(.easeInOut(duration: 0.35)) {
+                            appState.completeModuleOne()
+                        }
+                    }
+                )
+                .transition(.opacity.combined(with: .move(edge: .trailing)))
+
             default:
                 ModulePlaceholderView(
                     section: appState.currentSection,

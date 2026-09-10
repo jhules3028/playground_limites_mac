@@ -49,9 +49,9 @@ Cada pantalla educativa tendrá un archivo Swift con un nombre descriptivo.
 Por ejemplo:
 
 - `CoverView.swift`
-- `IntuitiveLimitView.swift`
-- `NumericalLimitView.swift`
-- `GraphicalLimitView.swift`
+- `module_1/ModuleOneView.swift`
+- `module_2/NumericalLimitView.swift`
+- `module_3/GraphicalLimitView.swift`
 - `AssessmentView.swift`
 
 Los números de los módulos aparecerán en la interfaz, pero no definirán el nombre técnico de los archivos.
@@ -80,16 +80,22 @@ playground/
 │   │   ├── LimitMath.swift
 │   │   ├── MainView.swift
 │   │   ├── CoverView.swift
-│   │   ├── IntuitiveLimitView.swift
-│   │   ├── NumericalLimitView.swift
-│   │   ├── GraphicalLimitView.swift
-│   │   ├── OneSidedLimitsView.swift
-│   │   ├── AlgebraicLimitView.swift
-│   │   ├── ContinuityView.swift
-│   │   ├── AssessmentView.swift
 │   │   ├── LimitGraphView.swift
 │   │   ├── LessonComponents.swift
-│   │   └── NavigationComponents.swift
+│   │   ├── NavigationComponents.swift
+│   │   ├── module_1/
+│   │   │   ├── ModuleOneView.swift
+│   │   │   ├── ModuleOneConceptView.swift
+│   │   │   ├── ModuleOneExploreView.swift
+│   │   │   ├── ModuleOneSummaryView.swift
+│   │   │   ├── ModuleOneComponents.swift
+│   │   │   └── ModuleOneExample.swift
+│   │   ├── module_2/
+│   │   ├── module_3/
+│   │   ├── module_4/
+│   │   ├── module_5/
+│   │   ├── module_6/
+│   │   └── module_7/
 │   ├── Resources/
 │   │   └── fes-acatlan-logo.png
 │   └── playground.xcworkspace/
@@ -101,9 +107,9 @@ playground/
 └── .gitignore
 ````
 
-La carpeta `Sources` permanecerá inicialmente plana.
+La infraestructura compartida y la portada permanecerán directamente en `Sources`.
 
-Esto permitirá reducir problemas de compatibilidad entre diferentes versiones de Xcode.
+Cada módulo educativo se organizará en su propia subcarpeta (`module_1`, `module_2`, etc.). Los archivos seguirán usando nombres descriptivos para que su función pueda identificarse sin depender solamente del número de módulo.
 
 Los archivos se crearán conforme sean necesarios.
 

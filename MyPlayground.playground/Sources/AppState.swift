@@ -5,6 +5,7 @@ import Foundation
 final class AppState: ObservableObject {
     @Published private(set) var currentSection: AppSection = .cover
     @Published private(set) var visitedSections: Set<AppSection> = [.cover]
+    @Published private(set) var completedSections: Set<AppSection> = []
 
     func startLearning() {
         go(to: .intuitiveLimit)
@@ -12,6 +13,11 @@ final class AppState: ObservableObject {
 
     func goToCover() {
         go(to: .cover)
+    }
+
+    func completeModuleOne() {
+        completedSections.insert(.intuitiveLimit)
+        go(to: .numericalLimit)
     }
 
     func go(to section: AppSection) {

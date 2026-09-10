@@ -9,6 +9,8 @@ enum AppTheme {
     static let softGold = Color(red: 0.96, green: 0.82, blue: 0.28)
     static let warmWhite = Color(red: 0.97, green: 0.97, blue: 0.94)
     static let mutedText = Color.white.opacity(0.68)
+    static let success = Color(red: 0.28, green: 0.78, blue: 0.56)
+    static let error = Color(red: 0.94, green: 0.37, blue: 0.38)
 
     static let background = LinearGradient(
         colors: [deepNavy, navy, Color(red: 0.025, green: 0.21, blue: 0.33)],
