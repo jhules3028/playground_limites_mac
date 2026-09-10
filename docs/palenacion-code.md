@@ -115,6 +115,14 @@ playground/
 │   │   │   ├── ModuleFourGraph.swift
 │   │   │   └── ModuleFourExample.swift
 │   │   ├── module_5/
+│   │   │   ├── ModuleFiveView.swift
+│   │   │   ├── ModuleFiveDirectView.swift
+│   │   │   ├── ModuleFiveIndeterminateView.swift
+│   │   │   ├── ModuleFiveFactoringView.swift
+│   │   │   ├── ModuleFiveRationalizationView.swift
+│   │   │   ├── ModuleFiveAssessmentView.swift
+│   │   │   ├── ModuleFiveComponents.swift
+│   │   │   └── ModuleFiveExample.swift
 │   │   ├── module_6/
 │   │   └── module_7/
 │   ├── Resources/

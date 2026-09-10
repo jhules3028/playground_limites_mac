@@ -159,7 +159,7 @@ Condición de existencia
    ↓
 Dos preguntas
    ↓
-Módulo 5 provisional
+Módulo 5: cálculo algebraico
 ```
 
 ## Validaciones realizadas
@@ -173,4 +173,4 @@ Módulo 5 provisional
 
 ## Estado
 
-El módulo 4 está implementado en español. El módulo 5 permanece como pantalla provisional.
+El módulo 4 está implementado en español y conectado con el módulo 5.

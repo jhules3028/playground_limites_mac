@@ -35,6 +35,11 @@ final class AppState: ObservableObject {
         go(to: .algebraicLimit)
     }
 
+    func completeModuleFive() {
+        completedSections.insert(.algebraicLimit)
+        go(to: .continuity)
+    }
+
     func go(to section: AppSection) {
         currentSection = section
         visitedSections.insert(section)
