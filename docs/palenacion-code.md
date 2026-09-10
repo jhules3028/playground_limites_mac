@@ -124,6 +124,13 @@ playground/
 │   │   │   ├── ModuleFiveComponents.swift
 │   │   │   └── ModuleFiveExample.swift
 │   │   ├── module_6/
+│   │   │   ├── ModuleSixView.swift
+│   │   │   ├── ModuleSixIntroductionView.swift
+│   │   │   ├── ModuleSixCaseStudyView.swift
+│   │   │   ├── ModuleSixAssessmentView.swift
+│   │   │   ├── ModuleSixComponents.swift
+│   │   │   ├── ModuleSixGraph.swift
+│   │   │   └── ModuleSixExample.swift
 │   │   └── module_7/
 │   ├── Resources/
 │   │   └── fes-acatlan-logo.png

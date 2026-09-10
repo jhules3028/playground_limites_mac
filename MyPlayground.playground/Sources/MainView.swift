@@ -116,6 +116,26 @@ struct MainView: View {
                 )
                 .transition(.opacity.combined(with: .move(edge: .trailing)))
 
+            case .continuity:
+                ModuleSixView(
+                    onExit: {
+                        withAnimation(.easeInOut(duration: 0.35)) {
+                            appState.goToCover()
+                        }
+                    },
+                    onPreviousModule: {
+                        withAnimation(.easeInOut(duration: 0.35)) {
+                            appState.go(to: .algebraicLimit)
+                        }
+                    },
+                    onComplete: {
+                        withAnimation(.easeInOut(duration: 0.35)) {
+                            appState.completeModuleSix()
+                        }
+                    }
+                )
+                .transition(.opacity.combined(with: .move(edge: .trailing)))
+
             default:
                 ModulePlaceholderView(
                     section: appState.currentSection,

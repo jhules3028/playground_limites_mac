@@ -40,6 +40,11 @@ final class AppState: ObservableObject {
         go(to: .continuity)
     }
 
+    func completeModuleSix() {
+        completedSections.insert(.continuity)
+        go(to: .assessment)
+    }
+
     func go(to section: AppSection) {
         currentSection = section
         visitedSections.insert(section)

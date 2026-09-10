@@ -150,7 +150,7 @@ Racionalización
    ↓
 Evaluación de dos ejercicios
    ↓
-Módulo 6 provisional
+Módulo 6: continuidad y discontinuidades
 ```
 
 ## Validaciones realizadas
@@ -164,4 +164,4 @@ Módulo 6 provisional
 
 ## Estado
 
-El módulo 5 está implementado en español. El módulo 6 permanece como pantalla provisional.
+El módulo 5 está implementado en español y conectado con el módulo 6.
